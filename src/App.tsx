@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       {Array(10)
@@ -14,6 +14,6 @@ function App() {
       {!!0 && <div>Test</div>}
     </>
   );
-}
+};
 
 export default App;
