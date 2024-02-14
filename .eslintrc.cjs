@@ -15,6 +15,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
+    'plugin:promise/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended-type-checked',
@@ -37,7 +38,7 @@ module.exports = {
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
   },
-  plugins: ['react', 'react-hooks', 'react-refresh', 'import'],
+  plugins: ['react', 'react-hooks', 'react-refresh', 'import', 'promise'],
   rules: {
     // react-refresh
     'react-refresh/only-export-components': [
@@ -128,6 +129,34 @@ module.exports = {
         warnOnUnassignedImports: true,
       },
     ],
+    // promise
+    'promise/catch-or-return': [
+      2,
+      {
+        allowThen: true,
+        allowFinally: true,
+        terminationMethod: ['catch', 'asCallback', 'finally'],
+      },
+    ],
+    'promise/no-return-wrap': [
+      2,
+      {
+        allowReject: true,
+      },
+    ],
+    'promise/param-names': 2,
+    'promise/always-return': [
+      1,
+      {
+        ignoreLastCallback: true,
+      },
+    ],
+    'promise/no-nesting': 1,
+    'promise/no-promise-in-callback': 1,
+    'promise/no-new-statics': 2,
+    'promise/no-return-in-finally': 1,
+    'promise/valid-params': 1,
+    'promise/no-multiple-resolved': 1,
     // eslint
     'no-console': 2,
   },
