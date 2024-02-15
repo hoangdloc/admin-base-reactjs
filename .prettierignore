@@ -1,0 +1,5 @@
+# .prettierignore
+dist/
+*.min.js
+node_modules/
+# src/translations/en

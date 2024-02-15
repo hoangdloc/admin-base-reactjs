@@ -21,6 +21,7 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -46,6 +47,7 @@ module.exports = {
     'import',
     'promise',
     'jsx-a11y',
+    'prettier',
   ],
   rules: {
     // react-refresh
@@ -237,7 +239,10 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': 1,
     'jsx-a11y/scope': 1,
     'jsx-a11y/tabindex-no-positive': 1,
+    // prettier
+    'prettier/prettier': 1,
     // eslint
     'no-console': 2,
+    eqeqeq: 0,
   },
 };
