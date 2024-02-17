@@ -49,6 +49,7 @@ module.exports = {
     'jsx-a11y',
     'prettier',
   ],
+  reportUnusedDisableDirectives: true,
   rules: {
     // react-refresh
     'react-refresh/only-export-components': [
@@ -239,10 +240,165 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': 1,
     'jsx-a11y/scope': 1,
     'jsx-a11y/tabindex-no-positive': 1,
-    // prettier
-    'prettier/prettier': 1,
     // eslint
     'no-console': 2,
-    eqeqeq: 0,
+    'no-duplicate-imports': [
+      2,
+      {
+        includeExports: true,
+      },
+    ],
+    'no-promise-executor-return': [
+      2,
+      {
+        allowVoid: true,
+      },
+    ],
+    'no-self-compare': 2,
+    'no-use-before-define': [
+      2,
+      {
+        functions: true,
+        classes: true,
+        variables: true,
+        allowNamedExports: true,
+      },
+    ],
+    'guard-for-in': 2,
+    'logical-assignment-operators': [
+      2,
+      'always',
+      {
+        enforceForIfStatements: true,
+      },
+    ],
+    'no-array-constructor': 2,
+    'no-caller': 2,
+    'no-eq-null': 2,
+    'no-eval': 2,
+    'no-implied-eval': 2,
+    'no-lonely-if': 2,
+    'no-magic-numbers': [
+      2,
+      {
+        ignore: [0, 1, -1],
+        ignoreArrayIndexes: true,
+        ignoreDefaultValues: true,
+        ignoreClassFieldInitialValues: true,
+        enforceConst: true,
+        detectObjects: false,
+      },
+    ],
+    'no-octal': 2,
+    'no-shadow': [
+      2,
+      {
+        builtinGlobals: true,
+        hoist: 'all',
+        allow: [
+          'resolve',
+          'reject',
+          'done',
+          'cb',
+          'next',
+          'err',
+          'error',
+          'data',
+        ],
+        ignoreOnInitialization: false,
+      },
+    ],
+    'no-unneeded-ternary': [
+      2,
+      {
+        defaultAssignment: true,
+      },
+    ],
+    'no-unused-expressions': [
+      2,
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+        enforceForJSX: true,
+      },
+    ],
+    'no-var': 2,
+    'no-useless-concat': 2,
+    'no-useless-computed-key': [
+      2,
+      {
+        enforceForClassMembers: true,
+      },
+    ],
+    'no-with': 2,
+    'prefer-const': [
+      2,
+      {
+        destructuring: 'all',
+        ignoreReadBeforeAssign: true,
+      },
+    ],
+    'prefer-object-has-own': 2,
+    'sort-imports': [
+      1,
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
+    ],
+    'sort-keys': [
+      1,
+      'asc',
+      {
+        caseSensitive: true,
+        natural: true,
+        allowLineSeparatedGroups: false,
+        minKeys: 2,
+      },
+    ],
+    'sort-vars': [
+      1,
+      {
+        ignoreCase: false,
+      },
+    ],
+    'vars-on-top': 2,
+    yoda: [
+      2,
+      'never',
+      {
+        exceptRange: true,
+        onlyEquality: true,
+      },
+    ],
+    'arrow-body-style': [
+      2,
+      'as-needed',
+      {
+        requireReturnForObjectLiteral: false,
+      },
+    ],
+    'block-scoped-var': 2,
+    'default-case': [
+      2,
+      {
+        commentPattern: '^skip\\sdefault',
+      },
+    ],
+    'default-case-last': 2,
+    'default-param-last': 2,
+    'dot-notation': [
+      2,
+      {
+        allowKeywords: true,
+      },
+    ],
+    eqeqeq: [2, 'always'],
+    // prettier
+    'prettier/prettier': 1,
   },
 };
