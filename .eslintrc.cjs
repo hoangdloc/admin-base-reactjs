@@ -69,7 +69,7 @@ module.exports = {
       },
     ],
     // react
-    'react/button-has-type': 1,
+    'react/button-has-type': 0,
     'react/react-in-jsx-scope': 0,
     'react/self-closing-comp': [
       2,
@@ -112,6 +112,7 @@ module.exports = {
     'import/no-named-as-default': 1,
     'import/no-unused-modules': 1,
     'import/no-nodejs-modules': 2,
+    'import/no-unresolved': 0, // using module bundler so turn this rule off
     'import/default': 2,
     'import/named': 2,
     'import/no-self-import': 2,
@@ -864,7 +865,7 @@ module.exports = {
       2,
       {
         checkParameterProperties: true,
-        ignoreInferredTypes: false,
+        ignoreInferredTypes: true,
         treatMethodsAsReadonly: true,
       },
     ],

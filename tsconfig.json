@@ -16,6 +16,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@*": [
+        "./src/*"
+      ],
+    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -27,6 +33,7 @@
   "include": [
     "vite.config.ts",
     ".eslintrc.js",
+    "i18n.config.js",
     "src"
   ],
   "references": [

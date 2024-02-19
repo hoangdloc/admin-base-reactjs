@@ -1,5 +1,11 @@
+import { AppButton } from '@components';
+
 const App: React.FC = () => {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <AppButton />
+    </div>
+  );
 };
 
 export default App;
