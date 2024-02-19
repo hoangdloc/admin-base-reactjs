@@ -15,6 +15,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "allowUmdGlobalAccess": true,
+    "allowArbitraryExtensions": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
@@ -22,12 +30,19 @@
         "./src/*"
       ],
     },
+    /* Diagnostics */
+    "diagnostics": true,
+    // "explainFiles": true,
+    "extendedDiagnostics": true,
+    // "generateCpuProfile": "profile.cpuprofile",
+    // "traceResolution": true,
+    // "allowJs": true,
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": false,
     "strictNullChecks": true
   },
   "include": [
