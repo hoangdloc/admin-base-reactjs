@@ -758,7 +758,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': [
       2,
       {
-        builtinGlobals: true,
+        builtinGlobals: false,
         hoist: 'all',
         allow: [
           'resolve',

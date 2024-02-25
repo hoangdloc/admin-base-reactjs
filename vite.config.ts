@@ -1,7 +1,101 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+/* eslint-disable import/no-nodejs-modules */
+import crypto from 'crypto';
+import path from 'path';
+
+import react from '@vitejs/plugin-react-swc';
+import { defineConfig, loadEnv } from 'vite';
+import checker from 'vite-plugin-checker';
+import { qrcode } from 'vite-plugin-qrcode';
+import svgr from 'vite-plugin-svgr';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
+const FALLBACK_DEV_PORT = 5173;
+const PREVIEW_PORT = 8080;
+const MAX_CSS_MODULE_NAME_LENGTH = 5;
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+/** @type {import('vite').UserConfig} */
+export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, process.cwd());
+
+  let shouldUseSourceMap = false;
+  if (command === 'serve') {
+    shouldUseSourceMap = true;
+  } else {
+    shouldUseSourceMap = false;
+  }
+
+  return {
+    appType: 'spa',
+    build: {
+      reportCompressedSize: true,
+      sourcemap: shouldUseSourceMap,
+    },
+    cacheDir: 'node_modules/.vite',
+    clearScreen: true,
+    css: {
+      devSourcemap: true,
+      modules: {
+        generateScopedName: (name, filename, css): string => {
+          if (command === 'serve') {
+            const fileBasename = path.basename(filename);
+            const cleanFilename = fileBasename.replace(/\..*$/, '');
+            return `${cleanFilename}__${name}`;
+          }
+          const hash = crypto
+            .createHash('md5')
+            .update(css)
+            .digest('base64')
+            .slice(0, MAX_CSS_MODULE_NAME_LENGTH);
+          return hash;
+        },
+        localsConvention: 'camelCase',
+        scopeBehaviour: 'local',
+      },
+      transformer: 'postcss',
+    },
+    json: {
+      namedExports: true,
+      stringify: false,
+    },
+    logLevel: 'info',
+    plugins: [
+      react(),
+      svgr(),
+      tsconfigPaths(),
+      checker({
+        enableBuild: true,
+        eslint: {
+          lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
+        },
+        overlay: {
+          initialIsOpen: true,
+          position: 'bl',
+        },
+        stylelint: false,
+        terminal: true,
+        typescript: true,
+      }),
+      qrcode(),
+    ],
+    preview: {
+      host: true,
+      port: PREVIEW_PORT,
+      strictPort: true,
+    },
+    publicDir: 'public',
+    resolve: {
+      alias: [
+        {
+          find: '@',
+          replacement: path.resolve(__dirname, 'src'),
+        },
+      ],
+    },
+    server: {
+      host: true,
+      port: +env.VITE_PORT || FALLBACK_DEV_PORT,
+      strictPort: true,
+    },
+  };
+});

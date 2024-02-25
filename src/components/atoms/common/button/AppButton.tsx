@@ -5,10 +5,18 @@ interface IAppButtonProps extends React.ComponentPropsWithRef<'button'> {
 }
 
 export const AppButton = React.forwardRef<HTMLButtonElement, IAppButtonProps>(
-  (props) => {
-    const { type = 'button' } = props;
+  (props, ref) => {
+    const { type = 'button', ...rest } = props;
 
-    return <button type={type}>AppButton</button>;
+    return (
+      <button
+        {...rest}
+        ref={ref}
+        type={type}
+      >
+        AppButton
+      </button>
+    );
   },
 );
 
