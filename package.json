@@ -8,7 +8,8 @@
     "build": "eslint src --ext ts,tsx --report-unused-disable-directives --quiet && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix src",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "sass": "^1.71.1",
     "typescript": "^5.0.2",
