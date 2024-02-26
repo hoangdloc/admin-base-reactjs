@@ -2,12 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -20,19 +15,12 @@
     "allowArbitraryExtensions": true,
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
-    "types": [
-      "vite/client",
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/types"
-    ],
+    "types": ["vite/client"],
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@*": [
-        "./src/*"
-      ],
+      "@*": ["./src/*"]
     },
     /* Diagnostics */
     "diagnostics": true,
@@ -52,6 +40,7 @@
   "include": [
     "vite.config.ts",
     ".eslintrc.js",
+    ".lintstagedrc.cjs",
     "i18n.config.js",
     "src"
   ],

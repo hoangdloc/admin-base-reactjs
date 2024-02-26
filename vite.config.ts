@@ -72,7 +72,9 @@ export default defineConfig(({ command, mode }) => {
           initialIsOpen: true,
           position: 'bl',
         },
-        stylelint: false,
+        stylelint: {
+          lintCommand: 'stylelint "./src/**/*.{css,scss}"',
+        },
         terminal: true,
         typescript: true,
       }),
