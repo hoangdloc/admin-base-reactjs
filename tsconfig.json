@@ -15,8 +15,8 @@
     "allowArbitraryExtensions": true,
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
-    "types": ["vite/client"],
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "types": ["vite/client", "vitest/globals"],
+    "typeRoots": ["./node_modules/@types", "./src/types", "./node_modules"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {

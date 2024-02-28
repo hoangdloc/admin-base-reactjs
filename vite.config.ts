@@ -1,10 +1,12 @@
 /* eslint-disable import/no-nodejs-modules */
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-svgr/client" />
 import crypto from 'crypto';
 import path from 'path';
 
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig, loadEnv } from 'vite';
-import checker from 'vite-plugin-checker';
 import { qrcode } from 'vite-plugin-qrcode';
 import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -59,27 +61,7 @@ export default defineConfig(({ command, mode }) => {
       stringify: false,
     },
     logLevel: 'info',
-    plugins: [
-      react(),
-      svgr(),
-      tsconfigPaths(),
-      checker({
-        enableBuild: true,
-        eslint: {
-          lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-        },
-        overlay: {
-          initialIsOpen: true,
-          position: 'bl',
-        },
-        stylelint: {
-          lintCommand: 'stylelint "./src/**/*.{css,scss}"',
-        },
-        terminal: true,
-        typescript: true,
-      }),
-      qrcode(),
-    ],
+    plugins: [react(), svgr(), tsconfigPaths(), qrcode()],
     preview: {
       host: true,
       port: PREVIEW_PORT,
@@ -95,9 +77,35 @@ export default defineConfig(({ command, mode }) => {
       ],
     },
     server: {
+      hmr: {
+        overlay: true,
+      },
       host: true,
       port: +env.VITE_PORT || FALLBACK_DEV_PORT,
       strictPort: true,
+    },
+    test: {
+      coverage: {
+        all: true,
+        branches: 0,
+        exclude: [
+          '**/src/main.{js,jsx,ts,tsx}',
+          '**/*.types.{ts,tsx}',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/src/vite-env*',
+          '**/index.{js,jsx,ts,tsx}',
+        ],
+        functions: 0,
+        include: ['**/src/**/*.{js,jsx,ts,tsx}'],
+        lines: 0,
+        provider: 'v8',
+        reporter: ['text', 'json', 'html', 'lcov'],
+        statements: 0,
+      },
+      environment: 'jsdom',
+      globals: true,
+      reporters: ['verbose'],
+      setupFiles: ['./src/setupTests.ts'],
     },
   };
 });
