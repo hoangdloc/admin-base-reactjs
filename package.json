@@ -12,7 +12,7 @@
     "format": "prettier src --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests",
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
