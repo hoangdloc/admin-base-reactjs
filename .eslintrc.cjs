@@ -24,6 +24,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -42,6 +43,20 @@ module.exports = {
       'node_modules',
       '\\.(coffee|scss|css|less|hbs|svg|json)$',
     ],
+    tailwindcss: {
+      callees: ['classnames', 'cn', 'clsx', 'classNames'],
+      config: 'tailwind.config.js',
+      cssFiles: [
+        'src/**/*.(scss|css|less)$',
+        '!**/node_modules',
+        '!**/.*',
+        '!**/dist',
+        '!**/build',
+      ],
+      cssFilesRefreshRate: 5_000,
+      removeDuplicates: true,
+      skipClassAttribute: false,
+    },
   },
   plugins: [
     '@typescript-eslint',
@@ -945,6 +960,14 @@ module.exports = {
         ignoreStatic: false,
       },
     ],
+    // tailwindcss
+    'tailwindcss/classnames-order': 1,
+    'tailwindcss/enforces-negative-arbitrary-values': 1,
+    'tailwindcss/enforces-shorthand': 1,
+    'tailwindcss/migration-from-tailwind-2': 1,
+    'tailwindcss/no-arbitrary-value': 0,
+    'tailwindcss/no-contradicting-classname': 1,
+    'tailwindcss/no-custom-classname': 0,
     // prettier
     'prettier/prettier': 1,
   },

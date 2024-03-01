@@ -13,4 +13,14 @@ module.exports = {
   arrowParens: 'always',
   endOfLine: 'lf',
   proseWrap: 'preserve',
+  plugins: ['prettier-plugin-tailwindcss'],
+  tailwindAttributes: ['className'],
+  tailwindFunctions: [
+    'clsx',
+    'cn',
+    'classNames',
+    'classNames',
+    'tw',
+    'twMerge',
+  ],
 };
