@@ -76,7 +76,7 @@ module.exports = {
   ],
   reportUnusedDisableDirectives: true,
   rules: {
-    // react-refresh
+    // Add your custom rules here// react-refresh
     'react-refresh/only-export-components': [
       1,
       {
@@ -104,7 +104,12 @@ module.exports = {
       },
     ],
     'react/sort-default-props': 1,
-    'react/jsx-no-leaked-render': 1,
+    'react/jsx-no-leaked-render': [
+      1,
+      {
+        validStrategies: ['coerce', 'ternary'],
+      },
+    ],
     'react/jsx-handler-names': 1,
     'react/jsx-no-useless-fragment': [
       1,
@@ -845,7 +850,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': [
       2,
       {
-        allow: ['^.*\\.json$'],
+        allow: ['^.*\\.json$', 'tailwindcss/plugin'],
       },
     ],
     '@typescript-eslint/non-nullable-type-assertion-style': 1,
@@ -877,7 +882,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/prefer-readonly-parameter-types': [
-      2,
+      0,
       {
         checkParameterProperties: true,
         ignoreInferredTypes: true,
@@ -936,7 +941,7 @@ module.exports = {
         allowString: true,
         allowNumber: true,
         allowNullableObject: true,
-        allowNullableBoolean: false,
+        allowNullableBoolean: true,
         allowNullableString: false,
         allowNullableNumber: false,
         allowNullableEnum: false,

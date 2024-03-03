@@ -1,4 +1,6 @@
+/* eslint-env node */
 /* eslint-disable import/no-nodejs-modules */
+
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-svgr/client" />

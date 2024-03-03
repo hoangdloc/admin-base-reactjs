@@ -4,6 +4,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_PORT: string;
+  readonly VITE_LANGUAGE: string;
   readonly VITE_PUBLIC_API_URL: string;
   // Firebase env
   readonly VITE_FIREBASE_API_KEY: string;

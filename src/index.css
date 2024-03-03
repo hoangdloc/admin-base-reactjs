@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 box-border min-w-0 p-0;
+  }
+
+  html {
+    @apply scroll-smooth text-black antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-2 w-2 bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded bg-neutral-400;
+  }
+}
