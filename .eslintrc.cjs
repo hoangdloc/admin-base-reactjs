@@ -76,7 +76,7 @@ module.exports = {
   ],
   reportUnusedDisableDirectives: true,
   rules: {
-    // Add your custom rules here// react-refresh
+    // react-refresh
     'react-refresh/only-export-components': [
       1,
       {
