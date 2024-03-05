@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { type TKeyTranslation, useAppTranslation } from '@hooks';
+import { DEFAULT_DEBOUNCE_WAIT } from '@settings';
 import { cn, isDevEnv } from '@utils';
+import debounde from 'lodash/debounce';
 import React from 'react';
 
 import { AppSpin } from '../spin';
@@ -11,6 +13,7 @@ type TComponentVariant = 'danger' | 'primary' | 'secondary';
 interface IAppButtonProps
   extends Omit<React.ComponentPropsWithRef<'button'>, 'children'> {
   bordered?: boolean;
+  debouceOnClick?: boolean | number;
   ghost?: boolean;
   icon?: React.ReactNode;
   iconClassName?: string;
@@ -69,6 +72,7 @@ export const AppButton = React.forwardRef<
   const {
     type = 'button',
     bordered,
+    debouceOnClick = false,
     text,
     textClassName,
     className,
@@ -84,6 +88,15 @@ export const AppButton = React.forwardRef<
     ...rest
   } = props;
   const { t } = useAppTranslation();
+  const debounceWait =
+    typeof debouceOnClick === 'number' ? debouceOnClick : DEFAULT_DEBOUNCE_WAIT;
+
+  const onClickDebounced: typeof onClick | undefined =
+    onClick &&
+    debounde(onClick, debounceWait, {
+      leading: true,
+      trailing: false,
+    });
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     if (loading || disabled) {
@@ -91,6 +104,10 @@ export const AppButton = React.forwardRef<
       return;
     }
     e.stopPropagation();
+    if (debouceOnClick) {
+      onClickDebounced?.(e);
+      return;
+    }
     onClick?.(e);
   };
 
