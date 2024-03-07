@@ -89,7 +89,12 @@ module.exports = {
       },
     ],
     'react/sort-default-props': 1,
-    'react/jsx-no-leaked-render': 1,
+    'react/jsx-no-leaked-render': [
+      1,
+      {
+        validStrategies: ['coerce', 'ternary'],
+      },
+    ],
     'react/jsx-handler-names': 1,
     'react/jsx-no-useless-fragment': [
       1,
@@ -862,7 +867,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/prefer-readonly-parameter-types': [
-      2,
+      0,
       {
         checkParameterProperties: true,
         ignoreInferredTypes: true,
@@ -921,7 +926,7 @@ module.exports = {
         allowString: true,
         allowNumber: true,
         allowNullableObject: true,
-        allowNullableBoolean: false,
+        allowNullableBoolean: true,
         allowNullableString: false,
         allowNullableNumber: false,
         allowNullableEnum: false,

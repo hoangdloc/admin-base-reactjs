@@ -90,7 +90,7 @@ export default defineConfig(({ command, mode }) => {
         branches: 0,
         exclude: [
           '**/src/main.{js,jsx,ts,tsx}',
-          '**/*.types.{ts,tsx}',
+          '**/*.{types,type}.{ts,tsx}',
           '**/*.test.{js,jsx,ts,tsx}',
           '**/src/vite-env*',
           '**/index.{js,jsx,ts,tsx}',

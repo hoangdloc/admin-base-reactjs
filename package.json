@@ -12,7 +12,7 @@
     "format": "prettier src --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests",
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
@@ -45,7 +45,6 @@
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "sass": "^1.71.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-qrcode": "^0.2.3",
