@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import type { LOCALES_EN } from '@locales';
+import type { LOCALES_EN } from '@/locales';
 
-import type { TLiteralUnion, TObjectKeyPaths } from '@types';
+import type { TLiteralUnion, TObjectKeyPaths } from '@/types';
 
 export type TKeyTranslation = TLiteralUnion<TObjectKeyPaths<typeof LOCALES_EN>>;
 

@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppTranslation } from './useAppTranslation.hook';

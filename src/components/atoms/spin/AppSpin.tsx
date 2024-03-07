@@ -1,5 +1,6 @@
-import { cn, isDevEnv } from '@utils';
 import React from 'react';
+
+import { cn, isDevEnv } from '@/utils';
 
 interface IAppSpinProps {
   className?: string;

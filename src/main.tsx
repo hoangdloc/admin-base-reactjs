@@ -1,6 +1,7 @@
-import '@locales/i18n';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import '@/locales/i18n';
 
 import App from './App.tsx';
 import './index.css';
