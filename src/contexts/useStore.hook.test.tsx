@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { StoreContext } from './StoreContext';
 import { useStore } from './useStore.hook';
@@ -7,9 +7,15 @@ import type { IUseStoreData } from './store.type';
 
 describe('useStore', () => {
   it('should throw error when not within StoreProvider', () => {
-    const { result } = renderHook(() => useStore((state) => state));
-    expect(result.error).toEqual(
-      Error('useStore must be used within a StoreProvider'),
+    let error: any = undefined;
+    try {
+      renderHook(() => useStore((state) => state));
+    } catch (e) {
+      error = e;
+    }
+    expect(error).toBeDefined();
+    expect(error.message).toEqual(
+      'useStore must be used within a StoreProvider',
     );
   });
 

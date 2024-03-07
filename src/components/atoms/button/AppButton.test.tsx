@@ -2,13 +2,20 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { act } from 'react-dom/test-utils';
 
+import { I18nextProvider } from 'react-i18next';
+
+import i18n from '@/locales/i18n';
 import { DEFAULT_DEBOUNCE_WAIT } from '@/settings';
 
 import { AppButton } from './AppButton';
 
 describe('AppButton', () => {
   test('renders the button with the correct text', () => {
-    render(<AppButton text="Click me" />);
+    render(
+      <I18nextProvider i18n={i18n}>
+        <AppButton text="Click me" />
+      </I18nextProvider>,
+    );
 
     const button = screen.getByText(/Click me/i);
 
