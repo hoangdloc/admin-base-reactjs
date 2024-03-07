@@ -1,7 +1,8 @@
-import { DEFAULT_DEBOUNCE_WAIT } from '@settings';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { act } from 'react-dom/test-utils';
+
+import { DEFAULT_DEBOUNCE_WAIT } from '@/settings';
 
 import { AppButton } from './AppButton';
 

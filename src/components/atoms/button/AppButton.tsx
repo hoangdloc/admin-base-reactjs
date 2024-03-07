@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { type TKeyTranslation, useAppTranslation } from '@hooks';
-import { DEFAULT_DEBOUNCE_WAIT } from '@settings';
-import { cn, isDevEnv } from '@utils';
 import debounde from 'lodash/debounce';
+
 import React from 'react';
+
+import { type TKeyTranslation, useAppTranslation } from '@/hooks';
+import { DEFAULT_DEBOUNCE_WAIT } from '@/settings';
+import { cn, isDevEnv } from '@/utils';
 
 import { AppSpin } from '../spin';
 

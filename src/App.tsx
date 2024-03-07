@@ -1,9 +1,12 @@
-import { StoreContext, useStoreData } from '@contexts';
+import { ErrorFallback } from '@/components';
+import { StoreContext, useStoreData } from '@/contexts';
 
 const App: React.FC = () => {
+  const store = useStoreData();
+
   return (
-    <StoreContext.Provider value={useStoreData()}>
-      <div />
+    <StoreContext.Provider value={store}>
+      <ErrorFallback />
     </StoreContext.Provider>
   );
 };
