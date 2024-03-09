@@ -63,7 +63,14 @@ export default defineConfig(({ command, mode }) => {
       stringify: false,
     },
     logLevel: 'info',
-    plugins: [react(), svgr(), tsconfigPaths(), qrcode()],
+    plugins: [
+      react({
+        devTarget: 'esnext',
+      }),
+      svgr(),
+      tsconfigPaths(),
+      qrcode(),
+    ],
     preview: {
       host: true,
       port: PREVIEW_PORT,

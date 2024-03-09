@@ -1,7 +1,10 @@
-export default {
-  clientMsg: {
-    signUp: {
-      success: 'Sign up successfully!',
-    },
+const clientMsg = {
+  common: {
+    somethingWentWrong: 'Something went wrong!',
+  },
+  signUp: {
+    success: 'Sign up successfully!',
   },
 };
+
+export default clientMsg;

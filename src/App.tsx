@@ -6,7 +6,7 @@ const App: React.FC = () => {
 
   return (
     <StoreContext.Provider value={store}>
-      <ErrorFallback />
+      <ErrorFallback error={Error('Bug')} />
     </StoreContext.Provider>
   );
 };

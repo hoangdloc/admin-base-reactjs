@@ -16,6 +16,6 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded bg-neutral-400;
+    @apply bg-neutral-200 rounded;
   }
 }

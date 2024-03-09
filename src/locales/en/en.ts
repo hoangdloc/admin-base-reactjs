@@ -1,5 +1,7 @@
 export default {
-  commons: {},
+  commons: {
+    reset: 'Reset',
+  },
   pages: {
     signUp: {
       signUp: 'Sign Up',

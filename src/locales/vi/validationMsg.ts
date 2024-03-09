@@ -1,5 +1,5 @@
-export default {
-  validationMsg: {
-    required: 'Trường này là bắt buộc',
-  },
+const validationMsg = {
+  required: 'Trường này là bắt buộc',
 };
+
+export default validationMsg;

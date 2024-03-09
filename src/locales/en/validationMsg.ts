@@ -1,5 +1,5 @@
-export default {
-  validationMsg: {
-    required: 'This field is required',
-  },
+const validationMsg = {
+  required: 'This field is required',
 };
+
+export default validationMsg;

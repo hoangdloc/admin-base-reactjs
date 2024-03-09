@@ -14,7 +14,7 @@ describe('AppSpin', () => {
     expect(spinner).toHaveClass('animate-spin');
     expect(spinner).toHaveClass('rounded-full');
     expect(spinner).toHaveClass('border-2');
-    expect(spinner).toHaveClass('border-neutral-400');
+    expect(spinner).toHaveClass('border-neutral-200');
     expect(spinner).toHaveClass('border-t-white');
   });
 

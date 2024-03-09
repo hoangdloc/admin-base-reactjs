@@ -59,9 +59,9 @@ const extractButtonClasses = (
         isBordered && 'border border-primary',
       ),
       secondary: cn(
-        'bg-white-300 text-neutral-500',
-        isGhost && 'text-secondary bg-transparent',
-        isBordered && 'border border-neutral-500',
+        'bg-white-300 text-neutral-300',
+        isGhost && 'bg-transparent text-secondary',
+        isBordered && 'border border-neutral-300',
       ),
     },
   };
@@ -134,7 +134,7 @@ export const AppButton = React.forwardRef<
       {!loading && Boolean(icon) && (
         <span
           className={cn('text-inherit', iconClassName)}
-          {...(isDevEnv() && { 'data-testid': 'button-icon' })}
+          {...(isDevEnv && { 'data-testid': 'button-icon' })}
         >
           {icon}
         </span>

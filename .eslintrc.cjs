@@ -966,7 +966,7 @@ module.exports = {
       },
     ],
     // tailwindcss
-    'tailwindcss/classnames-order': 1,
+    'tailwindcss/classnames-order': 0,
     'tailwindcss/enforces-negative-arbitrary-values': 1,
     'tailwindcss/enforces-shorthand': 1,
     'tailwindcss/migration-from-tailwind-2': 1,
