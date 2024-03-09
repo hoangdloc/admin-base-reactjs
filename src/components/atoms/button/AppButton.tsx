@@ -60,8 +60,8 @@ const extractButtonClasses = (
       ),
       secondary: cn(
         'bg-white-300 text-neutral-300',
-        isGhost && 'bg-transparent text-secondary',
-        isBordered && 'border border-neutral-300',
+        isGhost && 'bg-transparent text-neutral-500',
+        isBordered && 'border border-neutral-500',
       ),
     },
   };
