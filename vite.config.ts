@@ -106,6 +106,8 @@ export default defineConfig(({ command, mode }) => {
           '**/src/types/**/*',
           '**/src/enums/**/*',
           '**/src/locales/**/*',
+          '**/src/settings/**/*',
+          '**/*stories*.{js,jsx,ts,tsx}',
         ],
         functions: 0,
         include: ['**/src/**/*.{js,jsx,ts,tsx}'],

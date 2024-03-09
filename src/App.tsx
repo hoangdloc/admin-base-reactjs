@@ -1,13 +1,15 @@
-import { ErrorFallback } from '@/components';
+import { AppErrorBoundary } from '@/components';
 import { StoreContext, useStoreData } from '@/contexts';
 
 const App: React.FC = () => {
   const store = useStoreData();
 
   return (
-    <StoreContext.Provider value={store}>
-      <ErrorFallback error={Error('Bug')} />
-    </StoreContext.Provider>
+    <AppErrorBoundary className="rounded-none px-4 py-2">
+      <StoreContext.Provider value={store}>
+        <div />
+      </StoreContext.Provider>
+    </AppErrorBoundary>
   );
 };
 
