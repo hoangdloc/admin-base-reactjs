@@ -11,10 +11,10 @@ export const AppSpin: React.FC<IAppSpinProps> = (props) => {
   return (
     <div
       className={cn(
-        'inline-block size-6 animate-spin rounded-full border-2 border-neutral-400 border-t-white',
+        'inline-block size-6 animate-spin rounded-full border-2 border-neutral-200 border-t-white',
         className,
       )}
-      {...(isDevEnv() && { 'data-testid': 'app-spin' })}
+      {...(isDevEnv && { 'data-testid': 'app-spin' })}
     />
   );
 };

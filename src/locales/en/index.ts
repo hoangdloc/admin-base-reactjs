@@ -4,6 +4,6 @@ import validationMsg from './validationMsg';
 
 export const LOCALES_EN = {
   ...en,
-  ...clientMsg,
-  ...validationMsg,
+  clientMsg,
+  validationMsg,
 } as const;

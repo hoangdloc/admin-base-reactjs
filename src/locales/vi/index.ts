@@ -4,6 +4,6 @@ import vi from './vi';
 
 export const LOCALES_VI = {
   ...vi,
-  ...clientMsg,
-  ...validationMsg,
+  clientMsg,
+  validationMsg,
 } as const;

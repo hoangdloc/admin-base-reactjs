@@ -1,1 +1,1 @@
-export const isDevEnv = (): boolean => import.meta.env.DEV;
+export const isDevEnv = import.meta.env.DEV;
