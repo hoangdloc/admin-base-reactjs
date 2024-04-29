@@ -127,6 +127,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+    'react/prop-types': 0,
     // import
     'import/no-empty-named-blocks': 1,
     'import/no-mutable-exports': 1,
