@@ -1,5 +1,6 @@
 import '../src/index.css';
 import type { Preview } from '@storybook/react';
+import i18n from './../src/locales/i18n';
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +11,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    i18n,
   },
 };
 
