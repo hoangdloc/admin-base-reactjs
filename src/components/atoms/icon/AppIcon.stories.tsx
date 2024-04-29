@@ -19,13 +19,13 @@ export const Default: TStory = {
       {Object.keys(icons).map((icon) => (
         <div
           key={icon}
-          className="flex min-h-[8rem] min-w-[8rem] flex-col items-center gap-2 rounded-lg bg-neutral-50 p-2 shadow-sm"
+          className="flex min-h-[4rem] min-w-[4rem] flex-col items-center gap-2 rounded-lg bg-neutral-50 p-2 shadow-sm"
         >
           <AppIcon
             name={icon}
-            size={48}
+            size={32}
           />
-          <span className="text-[1.6rem]">{icon}</span>
+          <span className="text-base">{icon}</span>
         </div>
       ))}
     </div>

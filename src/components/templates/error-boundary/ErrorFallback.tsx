@@ -18,12 +18,12 @@ export const ErrorFallback: React.FC<IErrorFallbackProps> = (props) => {
     <div
       role="alert"
       className={cn(
-        'size-full rounded-lg border border-red bg-red-100',
+        'size-full rounded-lg border border-red-400 bg-red-100 px-2 py-1',
         className,
       )}
     >
       <div className="flex items-center justify-between">
-        <p className="text-[1.6rem] text-red-400">
+        <p className="text-base text-red-400">
           💀 {t('clientMsg.common.somethingWentWrong')}
         </p>
         <button
@@ -36,9 +36,7 @@ export const ErrorFallback: React.FC<IErrorFallbackProps> = (props) => {
         </button>
       </div>
       {!!isDevEnv && (
-        <pre className="mt-1 text-[1.4rem] text-neutral-400">
-          {error.message}
-        </pre>
+        <pre className="mt-1 text-sm text-neutral-400">{error.message}</pre>
       )}
     </div>
   );
