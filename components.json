@@ -12,6 +12,6 @@
   },
   "aliases": {
     "components": "@/components/atoms",
-    "utils": "@/utils/helpers/classNames.utils"
+    "utils": "@/utils"
   }
 }
