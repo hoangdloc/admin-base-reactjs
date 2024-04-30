@@ -37,4 +37,40 @@ const Destructive: TStory = {
   ),
 };
 
-export { Default, Destructive };
+const Info: TStory = {
+  render: () => (
+    <Alert variant="info">
+      <AlertCircle className="size-4" />
+      <AlertTitle>Information</AlertTitle>
+      <AlertDescription>
+        You can add components to your app using the cli.
+      </AlertDescription>
+    </Alert>
+  ),
+};
+
+const Success: TStory = {
+  render: () => (
+    <Alert variant="success">
+      <AlertCircle className="size-4" />
+      <AlertTitle>Success</AlertTitle>
+      <AlertDescription>
+        Your session has expired. Please log in again.
+      </AlertDescription>
+    </Alert>
+  ),
+};
+
+const Warning: TStory = {
+  render: () => (
+    <Alert variant="warning">
+      <AlertCircle className="size-4" />
+      <AlertTitle>Warning</AlertTitle>
+      <AlertDescription>
+        Your session has expired. Please log in again.
+      </AlertDescription>
+    </Alert>
+  ),
+};
+
+export { Default, Destructive, Info, Success, Warning };
