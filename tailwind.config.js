@@ -50,6 +50,10 @@ export default {
           foreground: 'hsl(var(--destructive-foreground))',
         },
         foreground: 'hsl(var(--foreground))',
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          foreground: 'hsl(var(--info-foreground))',
+        },
         input: 'hsl(var(--input))',
         muted: {
           DEFAULT: 'hsl(var(--muted))',
@@ -67,6 +71,14 @@ export default {
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
         },
       },
       keyframes: {

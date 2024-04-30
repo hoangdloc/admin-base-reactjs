@@ -28,6 +28,15 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+
+    --success: 147 47% 44%;
+    --success-foreground: 147 4.699999999999999% 97.2%;
+
+    --info: 219 64% 42%;
+    --info-foreground: 219 6.4% 97.1%;
+
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
@@ -59,6 +68,15 @@
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+
+    --warning: 48 96% 89%;
+    --warning-foreground: 38 92% 50%;
+
+    --success: 105 100% 19%;
+    --success-foreground: 105 2% 91.9%;
+
+    --info: 215 82% 44%;
+    --info-foreground: 215 8.2% 97.2%;
 
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;

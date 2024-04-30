@@ -26,10 +26,31 @@ const Secondary: TStory = {
   },
 };
 
+const Success: TStory = {
+  args: {
+    children: 'Success',
+    variant: 'success',
+  },
+};
+
 const Destructive: TStory = {
   args: {
     children: 'Destructive',
     variant: 'destructive',
+  },
+};
+
+const Info: TStory = {
+  args: {
+    children: 'Info',
+    variant: 'info',
+  },
+};
+
+const Warning: TStory = {
+  args: {
+    children: 'Warning',
+    variant: 'warning',
   },
 };
 
@@ -87,7 +108,10 @@ const Loading: TStory = {
 export {
   Primary,
   Secondary,
+  Success,
   Destructive,
+  Info,
+  Warning,
   Outline,
   Ghost,
   Link,
