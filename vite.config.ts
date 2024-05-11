@@ -50,7 +50,7 @@ export default defineConfig(({ command, mode }) => {
             .createHash('md5')
             .update(css)
             .digest('base64')
-            .slice(0, MAX_CSS_MODULE_NAME_LENGTH);
+            .slice(-MAX_CSS_MODULE_NAME_LENGTH);
           return hash;
         },
         localsConvention: 'camelCase',

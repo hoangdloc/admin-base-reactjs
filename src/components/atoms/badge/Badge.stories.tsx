@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 import { Badge } from './Badge';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -18,38 +19,59 @@ const Default: TStory = {};
 
 const Info: TStory = {
   args: {
-    variant: 'info',
+    intent: 'info',
   },
 };
 
 const Secondary: TStory = {
   args: {
-    variant: 'secondary',
+    intent: 'secondary',
   },
 };
 
 const Success: TStory = {
   args: {
-    variant: 'success',
+    intent: 'success',
   },
 };
 
 const Destructive: TStory = {
   args: {
-    variant: 'destructive',
+    intent: 'destructive',
   },
 };
 
 const Warning: TStory = {
   args: {
-    variant: 'warning',
+    intent: 'warning',
   },
 };
 
 const Outline: TStory = {
-  args: {
-    variant: 'outline',
-  },
+  render: () => (
+    <div className="flex items-center gap-2">
+      {(
+        [
+          'default',
+          'info',
+          'secondary',
+          'success',
+          'destructive',
+          'warning',
+        ] as const
+      ).map((intent, i) => (
+        <Badge
+          key={intent}
+          intent={intent}
+          shape={i % 2 === 0 ? 'square' : undefined}
+          size={i % 2 === 0 ? 'sm' : i % 3 === 0 ? 'lg' : 'md'}
+          variant="outline"
+        >
+          Badge
+        </Badge>
+      ))}
+    </div>
+  ),
 };
 
 export { Default, Info, Secondary, Success, Destructive, Warning, Outline };
