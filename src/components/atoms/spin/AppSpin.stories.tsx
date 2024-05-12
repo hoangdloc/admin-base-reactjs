@@ -11,4 +11,20 @@ const meta: Meta<typeof AppSpin> = {
 export default meta;
 type TStory = StoryObj<typeof AppSpin>;
 
-export const Default: TStory = {};
+const Default: TStory = {};
+
+const Dashed: TStory = {
+  args: {
+    size: '2xl',
+    variant: 'dashed',
+  },
+};
+
+const Dotted: TStory = {
+  args: {
+    size: '3xl',
+    variant: 'dotted',
+  },
+};
+
+export { Default, Dashed, Dotted };
