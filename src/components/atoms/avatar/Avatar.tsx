@@ -3,16 +3,18 @@ import * as React from 'react';
 
 import { cn } from '@/utils';
 
+import { avatarVariants } from './styles';
+
+import type { VariantProps } from 'class-variance-authority';
+
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
+    VariantProps<typeof avatarVariants>
+>(({ className, shape = 'circle', size = 'md', ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
-    className={cn(
-      'relative flex size-10 shrink-0 overflow-hidden rounded-full',
-      className,
-    )}
+    className={cn(avatarVariants({ shape, size }), className)}
     {...props}
   />
 ));

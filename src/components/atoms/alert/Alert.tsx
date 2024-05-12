@@ -9,10 +9,11 @@ import type { VariantProps } from 'class-variance-authority';
 const Alert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
+>(({ className, intent = 'default', variant = 'solid', ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(alertVariants({ variant }), className)}
+    className={cn(alertVariants({ intent, variant }), className)}
+    data-variant={variant}
     role="alert"
     {...props}
   />

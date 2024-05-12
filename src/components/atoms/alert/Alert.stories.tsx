@@ -27,7 +27,7 @@ const Default: TStory = {
 
 const Destructive: TStory = {
   render: () => (
-    <Alert variant="destructive">
+    <Alert intent="destructive">
       <AlertCircle className="size-4" />
       <AlertTitle>Error</AlertTitle>
       <AlertDescription>
@@ -39,7 +39,7 @@ const Destructive: TStory = {
 
 const Info: TStory = {
   render: () => (
-    <Alert variant="info">
+    <Alert intent="info">
       <AlertCircle className="size-4" />
       <AlertTitle>Information</AlertTitle>
       <AlertDescription>
@@ -51,7 +51,7 @@ const Info: TStory = {
 
 const Success: TStory = {
   render: () => (
-    <Alert variant="success">
+    <Alert intent="success">
       <AlertCircle className="size-4" />
       <AlertTitle>Success</AlertTitle>
       <AlertDescription>
@@ -63,7 +63,7 @@ const Success: TStory = {
 
 const Warning: TStory = {
   render: () => (
-    <Alert variant="warning">
+    <Alert intent="warning">
       <AlertCircle className="size-4" />
       <AlertTitle>Warning</AlertTitle>
       <AlertDescription>
