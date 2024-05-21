@@ -2,48 +2,61 @@ import React from 'react';
 
 import { cn } from '@/utils';
 
-import { alertVariants } from './styles';
+import {
+  alertDescriptionVariants,
+  alertTitleVariants,
+  alertVariants,
+} from './styles';
 
-import type { VariantProps } from 'class-variance-authority';
+import type {
+  TAlertComposition,
+  TAlertDescriptionProps,
+  TAlertRootProps,
+  TAlertTitleProps,
+} from './types';
 
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, intent = 'default', variant = 'solid', ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(alertVariants({ intent, variant }), className)}
-    data-variant={variant}
-    role="alert"
-    {...props}
-  />
-));
-Alert.displayName = 'Alert';
+const AlertRoot = React.forwardRef<HTMLDivElement, TAlertRootProps>(
+  ({ className, intent = 'default', variant = 'solid', ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(alertVariants({ intent, variant }), className)}
+      data-variant={variant}
+      role="alert"
+      {...props}
+    />
+  ),
+);
+AlertRoot.displayName = 'AlertRoot';
 
-const AlertTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, children, ...props }, ref) => (
-  <h5
-    ref={ref}
-    className={cn('mb-1 font-medium leading-none tracking-tight', className)}
-    {...props}
-  >
-    {children}
-  </h5>
-));
+const AlertTitle = React.forwardRef<HTMLParagraphElement, TAlertTitleProps>(
+  ({ className, children, ...props }, ref) => (
+    <h5
+      ref={ref}
+      className={cn(alertTitleVariants(), className)}
+      {...props}
+    >
+      {children}
+    </h5>
+  ),
+);
 AlertTitle.displayName = 'AlertTitle';
 
 const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+  TAlertDescriptionProps
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    className={cn(alertDescriptionVariants(), className)}
     {...props}
   />
 ));
 AlertDescription.displayName = 'AlertDescription';
 
-export { Alert, AlertTitle, AlertDescription };
+const Alert: TAlertComposition = {
+  Description: AlertDescription,
+  Root: AlertRoot,
+  Title: AlertTitle,
+};
+
+export { Alert };

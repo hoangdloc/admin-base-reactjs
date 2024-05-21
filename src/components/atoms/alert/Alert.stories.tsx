@@ -1,11 +1,11 @@
 import { AlertCircle, Terminal } from 'lucide-react';
 
-import { Alert, AlertDescription, AlertTitle } from './Alert';
+import { Alert } from './Alert';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Alert> = {
-  component: Alert,
+const meta: Meta<typeof Alert.Root> = {
+  component: Alert.Root,
   tags: ['autodocs'],
   title: 'Atoms/Alert',
 };
@@ -15,61 +15,61 @@ type TStory = StoryObj<typeof Alert>;
 
 const Default: TStory = {
   render: () => (
-    <Alert>
+    <Alert.Root>
       <Terminal className="size-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
+      <Alert.Title>Heads up!</Alert.Title>
+      <Alert.Description>
         You can add components to your app using the cli.
-      </AlertDescription>
-    </Alert>
+      </Alert.Description>
+    </Alert.Root>
   ),
 };
 
 const Destructive: TStory = {
   render: () => (
-    <Alert intent="destructive">
+    <Alert.Root intent="destructive">
       <AlertCircle className="size-4" />
-      <AlertTitle>Error</AlertTitle>
-      <AlertDescription>
+      <Alert.Title>Error</Alert.Title>
+      <Alert.Description>
         Your session has expired. Please log in again.
-      </AlertDescription>
-    </Alert>
+      </Alert.Description>
+    </Alert.Root>
   ),
 };
 
 const Info: TStory = {
   render: () => (
-    <Alert intent="info">
+    <Alert.Root intent="info">
       <AlertCircle className="size-4" />
-      <AlertTitle>Information</AlertTitle>
-      <AlertDescription>
+      <Alert.Title>Information</Alert.Title>
+      <Alert.Description>
         You can add components to your app using the cli.
-      </AlertDescription>
-    </Alert>
+      </Alert.Description>
+    </Alert.Root>
   ),
 };
 
 const Success: TStory = {
   render: () => (
-    <Alert intent="success">
+    <Alert.Root intent="success">
       <AlertCircle className="size-4" />
-      <AlertTitle>Success</AlertTitle>
-      <AlertDescription>
+      <Alert.Title>Success</Alert.Title>
+      <Alert.Description>
         Your session has expired. Please log in again.
-      </AlertDescription>
-    </Alert>
+      </Alert.Description>
+    </Alert.Root>
   ),
 };
 
 const Warning: TStory = {
   render: () => (
-    <Alert intent="warning">
+    <Alert.Root intent="warning">
       <AlertCircle className="size-4" />
-      <AlertTitle>Warning</AlertTitle>
-      <AlertDescription>
+      <Alert.Title>Warning</Alert.Title>
+      <Alert.Description>
         Your session has expired. Please log in again.
-      </AlertDescription>
-    </Alert>
+      </Alert.Description>
+    </Alert.Root>
   ),
 };
 

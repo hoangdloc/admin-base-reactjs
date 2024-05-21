@@ -419,6 +419,7 @@ module.exports = {
         disallowTypeAnnotations: true,
       },
     ],
+    '@typescript-eslint/consistent-type-definitions': 0,
     '@typescript-eslint/default-param-last': 2,
     '@typescript-eslint/dot-notation': [
       2,

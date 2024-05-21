@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const alertVariants = cva(
+const alertVariants = cva(
   [
     'relative',
     'w-full',
@@ -73,3 +73,14 @@ export const alertVariants = cva(
     },
   },
 );
+
+const alertTitleVariants = cva([
+  'mb-1',
+  'font-medium',
+  'leading-none',
+  'tracking-tight',
+]);
+
+const alertDescriptionVariants = cva(['text-sm', '[&_p]:leading-relaxed']);
+
+export { alertVariants, alertTitleVariants, alertDescriptionVariants };
