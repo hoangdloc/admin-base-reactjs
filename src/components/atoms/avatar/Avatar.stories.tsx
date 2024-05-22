@@ -1,9 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from './Avatar';
+import { Avatar } from './Avatar';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Avatar> = {
-  component: Avatar,
+const meta: Meta<typeof Avatar.Root> = {
+  component: Avatar.Root,
   tags: ['autodocs'],
   title: 'Atoms/Avatar',
 };
@@ -14,24 +14,24 @@ type TStory = StoryObj<typeof Avatar>;
 export const Default: TStory = {
   render: () => (
     <div className="flex gap-3">
-      <Avatar
+      <Avatar.Root
         shape="square"
         size="sm"
       >
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
-      <Avatar
+        <Avatar.Image src="https://github.com/shadcn.png" />
+        <Avatar.Fallback>CN</Avatar.Fallback>
+      </Avatar.Root>
+      <Avatar.Root>
+        <Avatar.Image src="https://github.com/shadcn.png" />
+        <Avatar.Fallback>CN</Avatar.Fallback>
+      </Avatar.Root>
+      <Avatar.Root
         shape="square"
         size="lg"
       >
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+        <Avatar.Image src="https://github.com/shadcn.png" />
+        <Avatar.Fallback>CN</Avatar.Fallback>
+      </Avatar.Root>
     </div>
   ),
 };
