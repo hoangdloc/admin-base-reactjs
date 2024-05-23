@@ -4,7 +4,6 @@ import debounce from 'lodash/debounce';
 
 import React from 'react';
 
-import { DEFAULT_DEBOUNCE_WAIT } from '@/settings';
 import { cn } from '@/utils';
 
 import { buttonVariants } from './styles';
@@ -18,13 +17,16 @@ export interface IButtonProps
   debouceOnClick?: boolean | number;
 }
 
+const DEFAULT_DEBOUNCE_WAIT = 300;
+
 export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
   (
     {
       className,
       debouceOnClick = false,
+      intent = 'default',
       onClick,
-      variant,
+      variant = 'solid',
       size,
       asChild = false,
       ...props
@@ -56,7 +58,8 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, intent, size, className }))}
+        data-variant={variant}
         {...props}
         onClick={handleClick}
       />
