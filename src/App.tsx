@@ -1,4 +1,4 @@
-import { AppErrorBoundary } from '@/components';
+import { AppErrorBoundary } from '@/components/templates';
 import { StoreContext, useStoreData } from '@/contexts';
 
 const App: React.FC = () => {
