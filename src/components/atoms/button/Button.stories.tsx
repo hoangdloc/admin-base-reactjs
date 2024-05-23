@@ -14,65 +14,189 @@ export default meta;
 type TStory = StoryObj<typeof Button>;
 
 const Primary: TStory = {
-  args: {
-    children: 'Primary',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="default"
+        variant="solid"
+      >
+        Primary
+      </Button>
+      <Button
+        intent="default"
+        variant="outline"
+      >
+        Primary
+      </Button>
+      <Button
+        intent="default"
+        variant="link"
+      >
+        Primary
+      </Button>
+      <Button
+        intent="default"
+        variant="ghost"
+      >
+        Primary
+      </Button>
+    </div>
+  ),
 };
 
 const Secondary: TStory = {
-  args: {
-    children: 'Secondary',
-    variant: 'secondary',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="secondary"
+        variant="solid"
+      >
+        Secondary
+      </Button>
+      <Button
+        intent="secondary"
+        variant="outline"
+      >
+        Secondary
+      </Button>
+      <Button
+        intent="secondary"
+        variant="link"
+      >
+        Secondary
+      </Button>
+      <Button
+        intent="secondary"
+        variant="ghost"
+      >
+        Secondary
+      </Button>
+    </div>
+  ),
 };
 
 const Success: TStory = {
-  args: {
-    children: 'Success',
-    variant: 'success',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="success"
+        variant="solid"
+      >
+        Success
+      </Button>
+      <Button
+        intent="success"
+        variant="outline"
+      >
+        Success
+      </Button>
+      <Button
+        intent="success"
+        variant="link"
+      >
+        Success
+      </Button>
+      <Button
+        intent="success"
+        variant="ghost"
+      >
+        Success
+      </Button>
+    </div>
+  ),
 };
 
 const Destructive: TStory = {
-  args: {
-    children: 'Destructive',
-    variant: 'destructive',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="destructive"
+        variant="solid"
+      >
+        Destructive
+      </Button>
+      <Button
+        intent="destructive"
+        variant="outline"
+      >
+        Destructive
+      </Button>
+      <Button
+        intent="destructive"
+        variant="link"
+      >
+        Destructive
+      </Button>
+      <Button
+        intent="destructive"
+        variant="ghost"
+      >
+        Destructive
+      </Button>
+    </div>
+  ),
 };
 
 const Info: TStory = {
-  args: {
-    children: 'Info',
-    variant: 'info',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="info"
+        variant="solid"
+      >
+        Info
+      </Button>
+      <Button
+        intent="info"
+        variant="outline"
+      >
+        Info
+      </Button>
+      <Button
+        intent="info"
+        variant="link"
+      >
+        Info
+      </Button>
+      <Button
+        intent="info"
+        variant="ghost"
+      >
+        Info
+      </Button>
+    </div>
+  ),
 };
 
 const Warning: TStory = {
-  args: {
-    children: 'Warning',
-    variant: 'warning',
-  },
-};
-
-const Outline: TStory = {
-  args: {
-    children: 'Outline',
-    variant: 'outline',
-  },
-};
-
-const Ghost: TStory = {
-  args: {
-    children: 'Ghost',
-    variant: 'ghost',
-  },
-};
-
-const Link: TStory = {
-  args: {
-    children: 'Link',
-    variant: 'link',
-  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button
+        intent="warning"
+        variant="solid"
+      >
+        Warning
+      </Button>
+      <Button
+        intent="warning"
+        variant="outline"
+      >
+        Warning
+      </Button>
+      <Button
+        intent="warning"
+        variant="link"
+      >
+        Warning
+      </Button>
+      <Button
+        intent="warning"
+        variant="ghost"
+      >
+        Warning
+      </Button>
+    </div>
+  ),
 };
 
 const Icon: TStory = {
@@ -112,9 +236,6 @@ export {
   Destructive,
   Info,
   Warning,
-  Outline,
-  Ghost,
-  Link,
   Icon,
   WithIcon,
   Loading,
