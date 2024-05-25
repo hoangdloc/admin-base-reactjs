@@ -2,7 +2,8 @@ import React from 'react';
 
 import { AppIcon } from '@/components/atoms';
 import { useAppTranslation } from '@/hooks';
-import { cn, isDevEnv } from '@/utils';
+import { isDevEnv } from '@/utils/checks';
+import { cn } from '@/utils/helpers';
 
 interface IErrorFallbackProps {
   error: Error;

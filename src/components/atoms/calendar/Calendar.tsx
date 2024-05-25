@@ -6,7 +6,7 @@ import * as React from 'react';
 import { DayPicker } from 'react-day-picker';
 
 import { buttonVariants } from '@/components/atoms/button/styles';
-import { cn } from '@/utils';
+import { cn } from '@/utils/helpers';
 
 import {
   calendarCaptionLabelVariants,

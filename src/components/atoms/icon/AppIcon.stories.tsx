@@ -7,7 +7,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof AppIcon> = {
   component: AppIcon,
   tags: ['autodocs'],
-  title: 'Atoms/Icon/AppIcon',
+  title: 'Atoms/AppIcon',
 };
 
 export default meta;

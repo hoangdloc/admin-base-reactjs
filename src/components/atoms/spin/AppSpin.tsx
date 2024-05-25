@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { cn, isDevEnv } from '@/utils';
+import { isDevEnv } from '@/utils/checks';
+import { cn } from '@/utils/helpers';
 
 import { appSpinVariants } from './styles';
 
