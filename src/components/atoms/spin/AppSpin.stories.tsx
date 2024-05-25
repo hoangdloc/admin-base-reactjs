@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta: Meta<typeof AppSpin> = {
   component: AppSpin,
   tags: ['autodocs'],
-  title: 'Atoms/Spin/AppSpin',
+  title: 'Atoms/AppSpin',
 };
 
 export default meta;

@@ -1,4 +1,4 @@
-import { Button } from '@/components';
+import { Button } from '@/components/atoms';
 
 import { AlertDialog } from './AlertDialog';
 
