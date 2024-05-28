@@ -12,5 +12,6 @@ export * from './checkbox';
 export * from './collapsible';
 export * from './command';
 export * from './dialog';
+export * from './drawer';
 export * from './icon';
 export * from './spin';
