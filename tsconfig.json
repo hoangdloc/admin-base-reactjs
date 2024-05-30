@@ -39,7 +39,7 @@
   },
   "include": [
     "vite.config.ts",
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     ".lintstagedrc.cjs",
     "i18n.config.js",
     "src"
