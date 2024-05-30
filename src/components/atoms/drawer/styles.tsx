@@ -1,6 +1,12 @@
 import { cva } from 'class-variance-authority';
 
-const drawerOverlayVariants = cva(['fixed', 'inset-0', 'z-50', 'bg-black/80']);
+const drawerOverlayVariants = cva([
+  'fixed',
+  'inset-0',
+  'z-50',
+  'bg-black/80',
+  'backdrop-blur-sm',
+]);
 
 const drawerContentVariants = cva([
   'fixed',
