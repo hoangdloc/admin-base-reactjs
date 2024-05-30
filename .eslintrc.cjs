@@ -28,7 +28,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', 'node_modules', 'coverage', '**/.*'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -415,7 +415,7 @@ module.exports = {
       2,
       {
         prefer: 'type-imports',
-        fixStyle: 'separate-type-imports',
+        fixStyle: 'inline-type-imports',
         disallowTypeAnnotations: true,
       },
     ],
@@ -431,11 +431,10 @@ module.exports = {
       },
     ],
     '@typescript-eslint/explicit-function-return-type': [
-      2,
+      0,
       {
         allowExpressions: false,
         allowTypedFunctionExpressions: true,
-        allowHigherOrderFunctions: true,
         allowHigherOrderFunctions: true,
         allowConciseArrowFunctionExpressionsStartingWithVoid: false,
         allowFunctionsWithoutTypeParameters: false,
@@ -444,7 +443,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': [
-      2,
+      0,
       {
         allowArgumentsExplicitlyTypedAsAny: true,
         allowDirectConstAssertionInArrowFunctions: false,

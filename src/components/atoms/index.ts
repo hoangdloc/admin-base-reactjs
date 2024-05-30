@@ -13,5 +13,8 @@ export * from './collapsible';
 export * from './command';
 export * from './dialog';
 export * from './drawer';
+export * from './dropdown-menu';
+export * from './form';
 export * from './icon';
+export * from './label';
 export * from './spin';
