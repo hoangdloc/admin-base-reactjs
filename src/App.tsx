@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <AppErrorBoundary className="rounded-none px-4 py-2">
       <StoreContext.Provider value={store}>
-        <div />
+        <div>React Admin Base</div>
       </StoreContext.Provider>
     </AppErrorBoundary>
   );

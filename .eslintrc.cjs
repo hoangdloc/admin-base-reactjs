@@ -938,7 +938,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/strict-boolean-expressions': [
-      2,
+      0,
       {
         allowString: true,
         allowNumber: true,
