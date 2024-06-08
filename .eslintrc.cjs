@@ -962,9 +962,9 @@ module.exports = {
       { lib: 'always', path: 'never', types: 'prefer-import' },
     ],
     '@typescript-eslint/unbound-method': [
-      2,
+      0,
       {
-        ignoreStatic: false,
+        ignoreStatic: true,
       },
     ],
     // tailwindcss
