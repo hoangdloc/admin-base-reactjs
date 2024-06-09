@@ -1,2 +1,3 @@
-export * from './classNames.util';
-export * from './squashObject.utils';
+export * from './classNames';
+export * from './squashObject';
+export * from './log';
