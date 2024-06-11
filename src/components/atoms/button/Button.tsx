@@ -8,18 +8,11 @@ import { cn } from '@/utils/helpers';
 
 import { buttonVariants } from './styles';
 
-import type { VariantProps } from 'class-variance-authority';
-
-export interface IButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  debouceOnClick?: boolean | number;
-}
+import type { TButtonProps } from './types';
 
 const DEFAULT_DEBOUNCE_WAIT = 300;
 
-export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, TButtonProps>(
   (
     {
       className,
