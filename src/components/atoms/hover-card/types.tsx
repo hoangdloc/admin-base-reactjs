@@ -18,11 +18,13 @@ type THoverCardContentProps = React.ComponentPropsWithoutRef<
 
 type THoverCardComposition = {
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & THoverCardContentProps
+    React.RefAttributes<React.ElementRef<typeof HoverCardPrimitive.Content>> &
+      THoverCardContentProps
   >;
   Root: React.FC<THoverCardRootProps>;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLAnchorElement> & THoverCardTriggerProps
+    React.RefAttributes<React.ElementRef<typeof HoverCardPrimitive.Trigger>> &
+      THoverCardTriggerProps
   >;
 };
 

@@ -63,41 +63,68 @@ type TDropdownMenuShortcutProps = React.HTMLAttributes<HTMLSpanElement>;
 
 type TDropdownMenuComposition = {
   CheckboxItem: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuCheckboxItemProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>
+    > &
+      TDropdownMenuCheckboxItemProps
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuContentProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.Content>
+    > &
+      TDropdownMenuContentProps
   >;
   Group: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuGroupProps
+    React.RefAttributes<React.ElementRef<typeof DropdownMenuPrimitive.Group>> &
+      TDropdownMenuGroupProps
   >;
   Item: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuItemProps
+    React.RefAttributes<React.ElementRef<typeof DropdownMenuPrimitive.Item>> &
+      TDropdownMenuItemProps
   >;
   Label: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuLabelProps
+    React.RefAttributes<React.ElementRef<typeof DropdownMenuPrimitive.Label>> &
+      TDropdownMenuLabelProps
   >;
   Portal: React.FC<TDropdownMenuPortalProps>;
   RadioGroup: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuRadioGroupProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.RadioGroup>
+    > &
+      TDropdownMenuRadioGroupProps
   >;
   RadioItem: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuRadioItemProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>
+    > &
+      TDropdownMenuRadioItemProps
   >;
   Root: React.FC<TDropdownMenuRootProps>;
   Separator: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuSeparatorProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.Separator>
+    > &
+      TDropdownMenuSeparatorProps
   >;
   Shortcut: React.FC<TDropdownMenuShortcutProps>;
   Sub: React.FC<TDropdownMenuSubProps>;
   SubContent: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuSubContentProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.SubContent>
+    > &
+      TDropdownMenuSubContentProps
   >;
   SubTrigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDropdownMenuSubTriggerProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>
+    > &
+      TDropdownMenuSubTriggerProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLButtonElement> & TDropdownMenuTriggerProps
+    React.RefAttributes<
+      React.ElementRef<typeof DropdownMenuPrimitive.Trigger>
+    > &
+      TDropdownMenuTriggerProps
   >;
 };
 
