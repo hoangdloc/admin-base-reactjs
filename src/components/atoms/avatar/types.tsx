@@ -25,13 +25,16 @@ type TAvatarFallbackProps = React.ComponentPropsWithoutRef<
 
 type TAvatarComposition = {
   Fallback: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLSpanElement> & TAvatarFallbackProps
+    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Fallback>> &
+      TAvatarFallbackProps
   >;
   Image: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLImageElement> & TAvatarImageProps
+    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Image>> &
+      TAvatarImageProps
   >;
   Root: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLSpanElement> & TAvatarRootProps
+    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Root>> &
+      TAvatarRootProps
   >;
 };
 

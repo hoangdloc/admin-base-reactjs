@@ -1,9 +1,3 @@
-import type {
-  DialogCloseProps,
-  DialogPortalProps,
-  DialogTriggerProps,
-} from '@radix-ui/react-dialog';
-
 import type { Drawer as DrawerPrimitive } from 'vaul';
 
 // ---------------------------------------–-------------------------------------
@@ -12,11 +6,15 @@ import type { Drawer as DrawerPrimitive } from 'vaul';
 
 type TDrawerRootProps = React.ComponentProps<typeof DrawerPrimitive.Root>;
 
-type TDrawerTriggerProps = DialogTriggerProps;
+type TDrawerTriggerProps = React.ComponentPropsWithoutRef<
+  typeof DrawerPrimitive.Trigger
+>;
 
-type TDrawerPortalProps = DialogPortalProps;
+type TDrawerPortalProps = React.ComponentProps<typeof DrawerPrimitive.Portal>;
 
-type TDrawerCloseProps = DialogCloseProps;
+type TDrawerCloseProps = React.ComponentPropsWithoutRef<
+  typeof DrawerPrimitive.Close
+>;
 
 type TDrawerOverlayProps = React.ComponentPropsWithoutRef<
   typeof DrawerPrimitive.Overlay
@@ -44,26 +42,32 @@ type TDrawerDescriptionProps = React.ComponentPropsWithoutRef<
 
 type TDrawerComposition = {
   Close: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLButtonElement> & TDrawerCloseProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Close>> &
+      TDrawerCloseProps
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDrawerContentProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Content>> &
+      TDrawerContentProps
   >;
   Description: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLParagraphElement> & TDrawerDescriptionProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Description>> &
+      TDrawerDescriptionProps
   >;
   Footer: React.FC<TDrawerFooterProps>;
   Header: React.FC<TDrawerHeaderProps>;
   Overlay: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDrawerOverlayProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Overlay>> &
+      TDrawerOverlayProps
   >;
   Portal: React.FC<TDrawerPortalProps>;
   Root: React.FC<TDrawerRootProps>;
   Title: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLHeadingElement> & TDrawerTitleProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Title>> &
+      TDrawerTitleProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLButtonElement> & TDrawerTriggerProps
+    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Trigger>> &
+      TDrawerTriggerProps
   >;
 };
 

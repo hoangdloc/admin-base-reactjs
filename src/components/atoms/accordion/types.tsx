@@ -26,16 +26,20 @@ type TAccordionContentProps = React.ComponentPropsWithoutRef<
 
 type TAccordionComposition = {
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TAccordionContentProps
+    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Content>> &
+      TAccordionContentProps
   >;
   Item: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TAccordionItemProps
+    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Item>> &
+      TAccordionItemProps
   >;
   Root: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TAccordionRootProps
+    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Root>> &
+      TAccordionRootProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLButtonElement> & TAccordionTriggerProps
+    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Trigger>> &
+      TAccordionTriggerProps
   >;
 };
 

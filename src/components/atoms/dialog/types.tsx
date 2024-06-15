@@ -30,27 +30,32 @@ type TDialogDescriptionProps = React.ComponentPropsWithoutRef<
 
 type TDialogComposition = {
   Close: React.ForwardRefExoticComponent<
-    DialogPrimitive.DialogCloseProps & React.RefAttributes<HTMLButtonElement>
+    DialogPrimitive.DialogCloseProps &
+      React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Close>>
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDialogContentProps
+    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Content>> &
+      TDialogContentProps
   >;
   Description: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLParagraphElement> & TDialogDescriptionProps
+    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Description>> &
+      TDialogDescriptionProps
   >;
   Footer: React.FC<TDialogFooterProps>;
   Header: React.FC<TDialogHeaderProps>;
   Overlay: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLDivElement> & TDialogOverlayProps
+    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Overlay>> &
+      TDialogOverlayProps
   >;
   Portal: React.FC<DialogPrimitive.DialogPortalProps>;
   Root: React.FC<DialogPrimitive.DialogProps>;
   Title: React.ForwardRefExoticComponent<
-    React.RefAttributes<HTMLHeadingElement> & TDialogTitleProps
+    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Title>> &
+      TDialogTitleProps
   >;
   Trigger: React.ForwardRefExoticComponent<
     React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> &
-      React.RefAttributes<HTMLButtonElement>
+      React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Trigger>>
   >;
 };
 

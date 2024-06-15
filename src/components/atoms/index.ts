@@ -20,4 +20,5 @@ export * from './icon';
 export * from './input';
 export * from './label';
 export * from './pagination';
+export * from './popover';
 export * from './spin';
