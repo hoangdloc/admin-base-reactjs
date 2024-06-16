@@ -24,23 +24,30 @@ import type {
   TCommandComposition,
   TCommandDialogProps,
   TCommandEmptyProps,
+  TCommandEmptyRef,
   TCommandGroupProps,
+  TCommandGroupRef,
   TCommandInputProps,
+  TCommandInputRef,
+  TCommandItemProps,
+  TCommandItemRef,
   TCommandListProps,
+  TCommandListRef,
   TCommandRootProps,
+  TCommandRootRef,
   TCommandSeparatorProps,
+  TCommandSeparatorRef,
 } from './types';
 
-const CommandRoot = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  TCommandRootProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive
-    ref={ref}
-    className={cn(commandRootVariants(), className)}
-    {...props}
-  />
-));
+const CommandRoot = React.forwardRef<TCommandRootRef, TCommandRootProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive
+      ref={ref}
+      className={cn(commandRootVariants(), className)}
+      {...props}
+    />
+  ),
+);
 CommandRoot.displayName = CommandPrimitive.displayName;
 
 const CommandDialog: React.FC<TCommandDialogProps> = ({
@@ -58,66 +65,62 @@ const CommandDialog: React.FC<TCommandDialogProps> = ({
   );
 };
 
-const CommandInput = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Input>,
-  TCommandInputProps
->(({ className, ...props }, ref) => (
-  <div
-    className="flex items-center border-b px-3"
-    cmdk-input-wrapper=""
-  >
-    <Search className="mr-2 size-4 shrink-0 opacity-50" />
-    <CommandPrimitive.Input
-      ref={ref}
-      className={cn(commandInputVariants(), className)}
-      {...props}
-    />
-  </div>
-));
+const CommandInput = React.forwardRef<TCommandInputRef, TCommandInputProps>(
+  ({ className, ...props }, ref) => (
+    <div
+      className="flex items-center border-b px-3"
+      cmdk-input-wrapper=""
+    >
+      <Search className="mr-2 size-4 shrink-0 opacity-50" />
+      <CommandPrimitive.Input
+        ref={ref}
+        className={cn(commandInputVariants(), className)}
+        {...props}
+      />
+    </div>
+  ),
+);
 
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
-const CommandList = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  TCommandListProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    className={cn(commandListVariants(), className)}
-    {...props}
-  />
-));
+const CommandList = React.forwardRef<TCommandListRef, TCommandListProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.List
+      ref={ref}
+      className={cn(commandListVariants(), className)}
+      {...props}
+    />
+  ),
+);
 
 CommandList.displayName = CommandPrimitive.List.displayName;
 
-const CommandEmpty = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  TCommandEmptyProps
->((props, ref) => (
-  <CommandPrimitive.Empty
-    ref={ref}
-    className={cn(commandEmptyVariants())}
-    {...props}
-  />
-));
+const CommandEmpty = React.forwardRef<TCommandEmptyRef, TCommandEmptyProps>(
+  (props, ref) => (
+    <CommandPrimitive.Empty
+      ref={ref}
+      className={cn(commandEmptyVariants())}
+      {...props}
+    />
+  ),
+);
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
-const CommandGroup = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  TCommandGroupProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
-    ref={ref}
-    className={cn(commandGroupVariants(), className)}
-    {...props}
-  />
-));
+const CommandGroup = React.forwardRef<TCommandGroupRef, TCommandGroupProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.Group
+      ref={ref}
+      className={cn(commandGroupVariants(), className)}
+      {...props}
+    />
+  ),
+);
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 const CommandSeparator = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Separator>,
+  TCommandSeparatorRef,
   TCommandSeparatorProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
@@ -128,16 +131,15 @@ const CommandSeparator = React.forwardRef<
 ));
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
-const CommandItem = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
-    ref={ref}
-    className={cn(commandItemVariants(), className)}
-    {...props}
-  />
-));
+const CommandItem = React.forwardRef<TCommandItemRef, TCommandItemProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.Item
+      ref={ref}
+      className={cn(commandItemVariants(), className)}
+      {...props}
+    />
+  ),
+);
 
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 

@@ -31,11 +31,29 @@ type TCommandSeparatorProps = React.ComponentPropsWithoutRef<
   typeof CommandPrimitive.Separator
 >;
 
-type TCommandItem = React.ComponentPropsWithoutRef<
+type TCommandItemProps = React.ComponentPropsWithoutRef<
   typeof CommandPrimitive.Item
 >;
 
 type TCommandShortcut = React.HTMLAttributes<HTMLSpanElement>;
+
+// ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TCommandEmptyRef = React.ElementRef<typeof CommandPrimitive.Empty>;
+
+type TCommandGroupRef = React.ElementRef<typeof CommandPrimitive.Group>;
+
+type TCommandInputRef = React.ElementRef<typeof CommandPrimitive.Input>;
+
+type TCommandItemRef = React.ElementRef<typeof CommandPrimitive.Item>;
+
+type TCommandListRef = React.ElementRef<typeof CommandPrimitive.List>;
+
+type TCommandRootRef = React.ElementRef<typeof CommandPrimitive>;
+
+type TCommandSeparatorRef = React.ElementRef<typeof CommandPrimitive.Separator>;
 
 // ---------------------------------------–-------------------------------------
 // Composition
@@ -44,32 +62,25 @@ type TCommandShortcut = React.HTMLAttributes<HTMLSpanElement>;
 type TCommandComposition = {
   Dialog: React.FC<TCommandDialogProps>;
   Empty: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Empty>> &
-      TCommandEmptyProps
+    React.RefAttributes<TCommandEmptyRef> & TCommandEmptyProps
   >;
   Group: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Group>> &
-      TCommandGroupProps
+    React.RefAttributes<TCommandGroupRef> & TCommandGroupProps
   >;
   Input: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Input>> &
-      TCommandInputProps
+    React.RefAttributes<TCommandInputRef> & TCommandInputProps
   >;
   Item: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Item>> &
-      TCommandItem
+    React.RefAttributes<TCommandItemRef> & TCommandItemProps
   >;
   List: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.List>> &
-      TCommandListProps
+    React.RefAttributes<TCommandListRef> & TCommandListProps
   >;
   Root: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<React.ElementRef<typeof CommandPrimitive>> &
-      TCommandRootProps
+    React.HTMLAttributes<TCommandRootRef> & TCommandRootProps
   >;
   Separator: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof CommandPrimitive.Separator>> &
-      TCommandSeparatorProps
+    React.RefAttributes<TCommandSeparatorRef> & TCommandSeparatorProps
   >;
   Shortcut: React.FC<TCommandShortcut>;
 };
@@ -82,7 +93,14 @@ export type {
   TCommandEmptyProps,
   TCommandGroupProps,
   TCommandSeparatorProps,
-  TCommandItem,
+  TCommandItemProps,
   TCommandShortcut,
+  TCommandEmptyRef,
+  TCommandGroupRef,
+  TCommandInputRef,
+  TCommandItemRef,
+  TCommandListRef,
+  TCommandRootRef,
+  TCommandSeparatorRef,
   TCommandComposition,
 };

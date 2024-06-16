@@ -44,43 +44,65 @@ type TAlertDialogCancelProps = React.ComponentPropsWithoutRef<
 >;
 
 // ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TAlertDialogActionRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Action
+>;
+
+type TAlertDialogCancelRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Cancel
+>;
+
+type TAlertDialogContentRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Content
+>;
+
+type TAlertDialogDescriptionRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Description
+>;
+
+type TAlertDialogOverlayRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Overlay
+>;
+
+type TAlertDialogTitleRef = React.ElementRef<typeof AlertDialogPrimitive.Title>;
+
+type TAlertDialogTriggerRef = React.ElementRef<
+  typeof AlertDialogPrimitive.Trigger
+>;
+
+// ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TAlertDialogComposition = {
   Action: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Action>> &
-      TAlertDialogActionProps
+    React.RefAttributes<TAlertDialogActionRef> & TAlertDialogActionProps
   >;
   Cancel: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Cancel>> &
-      TAlertDialogCancelProps
+    React.RefAttributes<TAlertDialogCancelRef> & TAlertDialogCancelProps
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Content>> &
-      TAlertDialogContentProps
+    React.RefAttributes<TAlertDialogContentRef> & TAlertDialogContentProps
   >;
   Description: React.ForwardRefExoticComponent<
-    React.RefAttributes<
-      React.ElementRef<typeof AlertDialogPrimitive.Description>
-    > &
+    React.RefAttributes<TAlertDialogDescriptionRef> &
       TAlertDialogDescriptionProps
   >;
   Footer: React.FC<TAlertDialogFooterProps>;
   Header: React.FC<TAlertDialogHeaderProps>;
   Overlay: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Overlay>> &
-      TAlertDialogOverlayProps
+    React.RefAttributes<TAlertDialogOverlayRef> & TAlertDialogOverlayProps
   >;
   Portal: React.FC<TAlertDialogPortalProps>;
   Root: React.FC<TAlertDialogRootProps>;
   Title: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Title>> &
-      TAlertDialogTitleProps
+    React.RefAttributes<TAlertDialogTitleRef> & TAlertDialogTitleProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AlertDialogPrimitive.Trigger>> &
-      TAlertDialogTriggerProps
+    React.RefAttributes<TAlertDialogTriggerRef> & TAlertDialogTriggerProps
   >;
 };
 
@@ -96,5 +118,12 @@ export type {
   TAlertDialogDescriptionProps,
   TAlertDialogActionProps,
   TAlertDialogCancelProps,
+  TAlertDialogActionRef,
+  TAlertDialogCancelRef,
+  TAlertDialogContentRef,
+  TAlertDialogDescriptionRef,
+  TAlertDialogOverlayRef,
+  TAlertDialogTitleRef,
+  TAlertDialogTriggerRef,
   TAlertDialogComposition,
 };

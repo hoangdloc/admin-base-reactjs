@@ -11,36 +11,37 @@ import {
 
 import type {
   TAvatarFallbackProps,
+  TAvatarFallbackRef,
   TAvatarImageProps,
+  TAvatarImageRef,
   TAvatarRootProps,
+  TAvatarRootRef,
 } from './types';
 
-const AvatarRoot = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  TAvatarRootProps
->(({ className, shape = 'circle', size = 'md', ...props }, ref) => (
-  <AvatarPrimitive.Root
-    ref={ref}
-    className={cn(avatarVariants({ shape, size }), className)}
-    {...props}
-  />
-));
+const AvatarRoot = React.forwardRef<TAvatarRootRef, TAvatarRootProps>(
+  ({ className, shape = 'circle', size = 'md', ...props }, ref) => (
+    <AvatarPrimitive.Root
+      ref={ref}
+      className={cn(avatarVariants({ shape, size }), className)}
+      {...props}
+    />
+  ),
+);
 AvatarRoot.displayName = AvatarPrimitive.Root.displayName;
 
-const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
-  TAvatarImageProps
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn(avatarImageVariants(), className)}
-    {...props}
-  />
-));
+const AvatarImage = React.forwardRef<TAvatarImageRef, TAvatarImageProps>(
+  ({ className, ...props }, ref) => (
+    <AvatarPrimitive.Image
+      ref={ref}
+      className={cn(avatarImageVariants(), className)}
+      {...props}
+    />
+  ),
+);
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  TAvatarFallbackRef,
   TAvatarFallbackProps
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback

@@ -15,26 +15,28 @@ import {
 import type {
   TAccordionComposition,
   TAccordionContentProps,
+  TAccordionContentRef,
   TAccordionItemProps,
   TAccordionTriggerProps,
+  TAccordionTriggerRef,
+  TAccrodionItemRef,
 } from './types';
 
 const AccordionRoot = AccordionPrimitive.Root;
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  TAccordionItemProps
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn(accordionItemVariants(), className)}
-    {...props}
-  />
-));
+const AccordionItem = React.forwardRef<TAccrodionItemRef, TAccordionItemProps>(
+  ({ className, ...props }, ref) => (
+    <AccordionPrimitive.Item
+      ref={ref}
+      className={cn(accordionItemVariants(), className)}
+      {...props}
+    />
+  ),
+);
 AccordionItem.displayName = 'AccordionItem';
 
 const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  TAccordionTriggerRef,
   TAccordionTriggerProps
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
@@ -51,7 +53,7 @@ const AccordionTrigger = React.forwardRef<
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
+  TAccordionContentRef,
   TAccordionContentProps
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content

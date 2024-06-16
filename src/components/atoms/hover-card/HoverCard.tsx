@@ -5,14 +5,18 @@ import { cn } from '@/utils/helpers';
 
 import { hoverCardContentVariants } from './styles';
 
-import type { THoverCardComposition, THoverCardContentProps } from './types';
+import type {
+  THoverCardComposition,
+  THoverCardContentProps,
+  THoverCardContentRef,
+} from './types';
 
 const HoverCardRoot = HoverCardPrimitive.Root;
 
 const HoverCardTrigger = HoverCardPrimitive.Trigger;
 
 const HoverCardContent = React.forwardRef<
-  React.ElementRef<typeof HoverCardPrimitive.Content>,
+  THoverCardContentRef,
   THoverCardContentProps
 >(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
   <HoverCardPrimitive.Content

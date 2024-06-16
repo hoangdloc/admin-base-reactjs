@@ -15,12 +15,16 @@ import {
 import type {
   TDrawerComposition,
   TDrawerContentProps,
+  TDrawerContentRef,
   TDrawerDescriptionProps,
+  TDrawerDescriptionRef,
   TDrawerFooterProps,
   TDrawerHeaderProps,
   TDrawerOverlayProps,
+  TDrawerOverlayRef,
   TDrawerRootProps,
   TDrawerTitleProps,
+  TDrawerTitleRef,
 } from './types';
 
 const DrawerRoot: React.FC<TDrawerRootProps> = ({
@@ -40,34 +44,32 @@ const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerClose = DrawerPrimitive.Close;
 
-const DrawerOverlay = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Overlay>,
-  TDrawerOverlayProps
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay
-    ref={ref}
-    className={cn(drawerOverlayVariants(), className)}
-    {...props}
-  />
-));
+const DrawerOverlay = React.forwardRef<TDrawerOverlayRef, TDrawerOverlayProps>(
+  ({ className, ...props }, ref) => (
+    <DrawerPrimitive.Overlay
+      ref={ref}
+      className={cn(drawerOverlayVariants(), className)}
+      {...props}
+    />
+  ),
+);
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-const DrawerContent = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Content>,
-  TDrawerContentProps
->(({ className, children, ...props }, ref) => (
-  <DrawerPortal>
-    <DrawerOverlay />
-    <DrawerPrimitive.Content
-      ref={ref}
-      className={cn(drawerContentVariants(), className)}
-      {...props}
-    >
-      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
-      {children}
-    </DrawerPrimitive.Content>
-  </DrawerPortal>
-));
+const DrawerContent = React.forwardRef<TDrawerContentRef, TDrawerContentProps>(
+  ({ className, children, ...props }, ref) => (
+    <DrawerPortal>
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        ref={ref}
+        className={cn(drawerContentVariants(), className)}
+        {...props}
+      >
+        <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+        {children}
+      </DrawerPrimitive.Content>
+    </DrawerPortal>
+  ),
+);
 DrawerContent.displayName = 'DrawerContent';
 
 const DrawerHeader: React.FC<TDrawerHeaderProps> = ({
@@ -92,20 +94,19 @@ const DrawerFooter: React.FC<TDrawerFooterProps> = ({
 );
 DrawerFooter.displayName = 'DrawerFooter';
 
-const DrawerTitle = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Title>,
-  TDrawerTitleProps
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Title
-    ref={ref}
-    className={cn(drawerTitleVariants(), className)}
-    {...props}
-  />
-));
+const DrawerTitle = React.forwardRef<TDrawerTitleRef, TDrawerTitleProps>(
+  ({ className, ...props }, ref) => (
+    <DrawerPrimitive.Title
+      ref={ref}
+      className={cn(drawerTitleVariants(), className)}
+      {...props}
+    />
+  ),
+);
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
 
 const DrawerDescription = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Description>,
+  TDrawerDescriptionRef,
   TDrawerDescriptionProps
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
