@@ -10,4 +10,10 @@ import type { VariantProps } from 'class-variance-authority';
 type TLabelProps = React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
   VariantProps<typeof labelVariants>;
 
-export type { TLabelProps };
+// ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TLabelRef = React.ElementRef<typeof LabelPrimitive.Root>;
+
+export type { TLabelProps, TLabelRef };

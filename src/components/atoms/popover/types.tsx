@@ -7,20 +7,36 @@ type TPopoverContentProps = React.ComponentPropsWithoutRef<
   typeof PopoverPrimitive.Content
 >;
 
+type TPopoverTriggerProps = React.ComponentPropsWithoutRef<
+  typeof PopoverPrimitive.Trigger
+>;
+
+// ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TPopoverContentRef = React.ElementRef<typeof PopoverPrimitive.Content>;
+
+type TPopoverTriggerRef = React.ElementRef<typeof PopoverPrimitive.Trigger>;
+
 // ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TPopoverComposition = {
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof PopoverPrimitive.Content>> &
-      TPopoverContentProps
+    React.RefAttributes<TPopoverContentRef> & TPopoverContentProps
   >;
   Root: React.FC<PopoverPrimitive.PopoverProps>;
   Trigger: React.ForwardRefExoticComponent<
-    PopoverPrimitive.PopoverTriggerProps &
-      React.RefAttributes<HTMLButtonElement>
+    React.RefAttributes<TPopoverTriggerRef> & TPopoverTriggerProps
   >;
 };
 
-export type { TPopoverComposition };
+export type {
+  TPopoverContentProps,
+  TPopoverTriggerProps,
+  TPopoverContentRef,
+  TPopoverTriggerRef,
+  TPopoverComposition,
+};

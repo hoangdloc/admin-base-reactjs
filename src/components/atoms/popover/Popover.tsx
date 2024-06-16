@@ -5,15 +5,19 @@ import { cn } from '@/utils/helpers';
 
 import { popoverContentVariants } from './styles';
 
-import type { TPopoverComposition } from './types';
+import type {
+  TPopoverComposition,
+  TPopoverContentProps,
+  TPopoverContentRef,
+} from './types';
 
 const PopoverRoot = PopoverPrimitive.Root;
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverContent = React.forwardRef<
-  React.ElementRef<typeof PopoverPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
+  TPopoverContentRef,
+  TPopoverContentProps
 >(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content

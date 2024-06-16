@@ -17,11 +17,15 @@ import {
 import type {
   TDialogComposition,
   TDialogContentProps,
+  TDialogContentRef,
   TDialogDescriptionProps,
+  TDialogDescriptionRef,
   TDialogFooterProps,
   TDialogHeaderProps,
   TDialogOverlayProps,
+  TDialogOverlayRef,
   TDialogTitleProps,
+  TDialogTitleRef,
 } from './types';
 
 const DialogRoot = DialogPrimitive.Root;
@@ -32,37 +36,35 @@ const DialogPortal = DialogPrimitive.Portal;
 
 const DialogClose = DialogPrimitive.Close;
 
-const DialogOverlay = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  TDialogOverlayProps
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Overlay
-    ref={ref}
-    className={cn(dialogOverlayVariants(), className)}
-    {...props}
-  />
-));
+const DialogOverlay = React.forwardRef<TDialogOverlayRef, TDialogOverlayProps>(
+  ({ className, ...props }, ref) => (
+    <DialogPrimitive.Overlay
+      ref={ref}
+      className={cn(dialogOverlayVariants(), className)}
+      {...props}
+    />
+  ),
+);
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
-const DialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  TDialogContentProps
->(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      className={cn(dialogContentVariants(), className)}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close className={cn(dialogContentCloseVariants())}>
-        <X className="size-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </DialogPortal>
-));
+const DialogContent = React.forwardRef<TDialogContentRef, TDialogContentProps>(
+  ({ className, children, ...props }, ref) => (
+    <DialogPortal>
+      <DialogOverlay />
+      <DialogPrimitive.Content
+        ref={ref}
+        className={cn(dialogContentVariants(), className)}
+        {...props}
+      >
+        {children}
+        <DialogPrimitive.Close className={cn(dialogContentCloseVariants())}>
+          <X className="size-4" />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  ),
+);
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 const DialogHeader: React.FC<TDialogHeaderProps> = ({
@@ -87,20 +89,19 @@ const DialogFooter: React.FC<TDialogFooterProps> = ({
 );
 DialogFooter.displayName = 'DialogFooter';
 
-const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  TDialogTitleProps
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title
-    ref={ref}
-    className={cn(dialogTitleVariants(), className)}
-    {...props}
-  />
-));
+const DialogTitle = React.forwardRef<TDialogTitleRef, TDialogTitleProps>(
+  ({ className, ...props }, ref) => (
+    <DialogPrimitive.Title
+      ref={ref}
+      className={cn(dialogTitleVariants(), className)}
+      {...props}
+    />
+  ),
+);
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
 const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
+  TDialogDescriptionRef,
   TDialogDescriptionProps
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description

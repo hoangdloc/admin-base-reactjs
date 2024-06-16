@@ -13,18 +13,24 @@ type THoverCardContentProps = React.ComponentPropsWithoutRef<
 >;
 
 // ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type THoverCardContentRef = React.ElementRef<typeof HoverCardPrimitive.Content>;
+
+type THoverCardTriggerRef = React.ElementRef<typeof HoverCardPrimitive.Trigger>;
+
+// ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type THoverCardComposition = {
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof HoverCardPrimitive.Content>> &
-      THoverCardContentProps
+    React.RefAttributes<THoverCardContentRef> & THoverCardContentProps
   >;
   Root: React.FC<THoverCardRootProps>;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof HoverCardPrimitive.Trigger>> &
-      THoverCardTriggerProps
+    React.RefAttributes<THoverCardTriggerRef> & THoverCardTriggerProps
   >;
 };
 
@@ -32,5 +38,7 @@ export type {
   THoverCardRootProps,
   THoverCardTriggerProps,
   THoverCardContentProps,
+  THoverCardContentRef,
+  THoverCardTriggerRef,
   THoverCardComposition,
 };

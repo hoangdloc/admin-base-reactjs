@@ -20,21 +20,28 @@ type TAvatarFallbackProps = React.ComponentPropsWithoutRef<
 >;
 
 // ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TAvatarFallbackRef = React.ElementRef<typeof AvatarPrimitive.Fallback>;
+
+type TAvatarImageRef = React.ElementRef<typeof AvatarPrimitive.Image>;
+
+type TAvatarRootRef = React.ElementRef<typeof AvatarPrimitive.Root>;
+
+// ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TAvatarComposition = {
   Fallback: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Fallback>> &
-      TAvatarFallbackProps
+    React.RefAttributes<TAvatarFallbackRef> & TAvatarFallbackProps
   >;
   Image: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Image>> &
-      TAvatarImageProps
+    React.RefAttributes<TAvatarImageRef> & TAvatarImageProps
   >;
   Root: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AvatarPrimitive.Root>> &
-      TAvatarRootProps
+    React.RefAttributes<TAvatarRootRef> & TAvatarRootProps
   >;
 };
 
@@ -42,5 +49,8 @@ export type {
   TAvatarRootProps,
   TAvatarImageProps,
   TAvatarFallbackProps,
+  TAvatarFallbackRef,
+  TAvatarImageRef,
+  TAvatarRootRef,
   TAvatarComposition,
 };

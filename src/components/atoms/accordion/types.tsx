@@ -21,25 +21,33 @@ type TAccordionContentProps = React.ComponentPropsWithoutRef<
 >;
 
 // ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TAccordionRootRef = React.ElementRef<typeof AccordionPrimitive.Root>;
+
+type TAccrodionItemRef = React.ElementRef<typeof AccordionPrimitive.Item>;
+
+type TAccordionTriggerRef = React.ElementRef<typeof AccordionPrimitive.Trigger>;
+
+type TAccordionContentRef = React.ElementRef<typeof AccordionPrimitive.Content>;
+
+// ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TAccordionComposition = {
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Content>> &
-      TAccordionContentProps
+    React.RefAttributes<TAccordionContentRef> & TAccordionContentProps
   >;
   Item: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Item>> &
-      TAccordionItemProps
+    React.RefAttributes<TAccrodionItemRef> & TAccordionItemProps
   >;
   Root: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Root>> &
-      TAccordionRootProps
+    React.RefAttributes<TAccordionRootRef> & TAccordionRootProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Trigger>> &
-      TAccordionTriggerProps
+    React.RefAttributes<TAccordionTriggerRef> & TAccordionTriggerProps
   >;
 };
 
@@ -48,5 +56,9 @@ export type {
   TAccordionItemProps,
   TAccordionTriggerProps,
   TAccordionContentProps,
+  TAccordionRootRef,
+  TAccrodionItemRef,
+  TAccordionTriggerRef,
+  TAccordionContentRef,
   TAccordionComposition,
 };

@@ -37,37 +37,49 @@ type TDrawerDescriptionProps = React.ComponentPropsWithoutRef<
 >;
 
 // ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TDrawerCloseRef = React.ElementRef<typeof DrawerPrimitive.Close>;
+
+type TDrawerContentRef = React.ElementRef<typeof DrawerPrimitive.Content>;
+
+type TDrawerDescriptionRef = React.ElementRef<
+  typeof DrawerPrimitive.Description
+>;
+
+type TDrawerOverlayRef = React.ElementRef<typeof DrawerPrimitive.Overlay>;
+
+type TDrawerTitleRef = React.ElementRef<typeof DrawerPrimitive.Title>;
+
+type TDrawerTriggerRef = React.ElementRef<typeof DrawerPrimitive.Trigger>;
+
+// ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TDrawerComposition = {
   Close: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Close>> &
-      TDrawerCloseProps
+    React.RefAttributes<TDrawerCloseRef> & TDrawerCloseProps
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Content>> &
-      TDrawerContentProps
+    React.RefAttributes<TDrawerContentRef> & TDrawerContentProps
   >;
   Description: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Description>> &
-      TDrawerDescriptionProps
+    React.RefAttributes<TDrawerDescriptionRef> & TDrawerDescriptionProps
   >;
   Footer: React.FC<TDrawerFooterProps>;
   Header: React.FC<TDrawerHeaderProps>;
   Overlay: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Overlay>> &
-      TDrawerOverlayProps
+    React.RefAttributes<TDrawerOverlayRef> & TDrawerOverlayProps
   >;
   Portal: React.FC<TDrawerPortalProps>;
   Root: React.FC<TDrawerRootProps>;
   Title: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Title>> &
-      TDrawerTitleProps
+    React.RefAttributes<TDrawerTitleRef> & TDrawerTitleProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DrawerPrimitive.Trigger>> &
-      TDrawerTriggerProps
+    React.RefAttributes<TDrawerTriggerRef> & TDrawerTriggerProps
   >;
 };
 
@@ -82,5 +94,11 @@ export type {
   TDrawerFooterProps,
   TDrawerTitleProps,
   TDrawerDescriptionProps,
+  TDrawerCloseRef,
+  TDrawerContentRef,
+  TDrawerDescriptionRef,
+  TDrawerOverlayRef,
+  TDrawerTitleRef,
+  TDrawerTriggerRef,
   TDrawerComposition,
 };

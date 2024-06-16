@@ -19,15 +19,23 @@ import {
 
 import type {
   TDropdownMenuCheckboxItemProps,
+  TDropdownMenuCheckboxItemRef,
   TDropdownMenuComposition,
   TDropdownMenuContentProps,
+  TDropdownMenuContentRef,
   TDropdownMenuItemProps,
+  TDropdownMenuItemRef,
   TDropdownMenuLabelProps,
+  TDropdownMenuLabelRef,
   TDropdownMenuRadioItemProps,
+  TDropdownMenuRadioItemRef,
   TDropdownMenuSeparatorProps,
+  TDropdownMenuSeparatorRef,
   TDropdownMenuShortcutProps,
   TDropdownMenuSubContentProps,
+  TDropdownMenuSubContentRef,
   TDropdownMenuSubTriggerProps,
+  TDropdownMenuSubTriggerRef,
 } from './types';
 
 const DropdownMenuRoot = DropdownMenuPrimitive.Root;
@@ -43,7 +51,7 @@ const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
 const DropdownMenuSubTrigger = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
+  TDropdownMenuSubTriggerRef,
   TDropdownMenuSubTriggerProps
 >(({ className, inset, children, ...props }, ref) => (
   <DropdownMenuPrimitive.SubTrigger
@@ -59,7 +67,7 @@ DropdownMenuSubTrigger.displayName =
   DropdownMenuPrimitive.SubTrigger.displayName;
 
 const DropdownMenuSubContent = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
+  TDropdownMenuSubContentRef,
   TDropdownMenuSubContentProps
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.SubContent
@@ -72,7 +80,7 @@ DropdownMenuSubContent.displayName =
   DropdownMenuPrimitive.SubContent.displayName;
 
 const DropdownMenuContent = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Content>,
+  TDropdownMenuContentRef,
   TDropdownMenuContentProps
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <DropdownMenuPrimitive.Portal>
@@ -87,7 +95,7 @@ const DropdownMenuContent = React.forwardRef<
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
 
 const DropdownMenuItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
+  TDropdownMenuItemRef,
   TDropdownMenuItemProps
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
@@ -99,7 +107,7 @@ const DropdownMenuItem = React.forwardRef<
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
 const DropdownMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
+  TDropdownMenuCheckboxItemRef,
   TDropdownMenuCheckboxItemProps
 >(({ className, children, checked, ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
@@ -120,7 +128,7 @@ DropdownMenuCheckboxItem.displayName =
   DropdownMenuPrimitive.CheckboxItem.displayName;
 
 const DropdownMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
+  TDropdownMenuRadioItemRef,
   TDropdownMenuRadioItemProps
 >(({ className, children, ...props }, ref) => (
   <DropdownMenuPrimitive.RadioItem
@@ -139,7 +147,7 @@ const DropdownMenuRadioItem = React.forwardRef<
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName;
 
 const DropdownMenuLabel = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Label>,
+  TDropdownMenuLabelRef,
   TDropdownMenuLabelProps
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
@@ -151,7 +159,7 @@ const DropdownMenuLabel = React.forwardRef<
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
 const DropdownMenuSeparator = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
+  TDropdownMenuSeparatorRef,
   TDropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator

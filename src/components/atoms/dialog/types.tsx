@@ -24,38 +24,54 @@ type TDialogDescriptionProps = React.ComponentPropsWithoutRef<
   typeof DialogPrimitive.Description
 >;
 
+type TDialogTriggerProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Trigger
+>;
+
+// ---------------------------------------–-------------------------------------
+// Component ref
+// ---------------------------------------–-------------------------------------
+
+type TDialogCloseRef = React.ElementRef<typeof DialogPrimitive.Close>;
+
+type TDialogContentRef = React.ElementRef<typeof DialogPrimitive.Content>;
+
+type TDialogDescriptionRef = React.ElementRef<
+  typeof DialogPrimitive.Description
+>;
+
+type TDialogOverlayRef = React.ElementRef<typeof DialogPrimitive.Overlay>;
+
+type TDialogTitleRef = React.ElementRef<typeof DialogPrimitive.Title>;
+
+type TDialogTriggerRef = React.ElementRef<typeof DialogPrimitive.Trigger>;
+
 // ---------------------------------------–-------------------------------------
 // Composition
 // ---------------------------------------–-------------------------------------
 
 type TDialogComposition = {
   Close: React.ForwardRefExoticComponent<
-    DialogPrimitive.DialogCloseProps &
-      React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Close>>
+    DialogPrimitive.DialogCloseProps & React.RefAttributes<TDialogCloseRef>
   >;
   Content: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Content>> &
-      TDialogContentProps
+    React.RefAttributes<TDialogContentRef> & TDialogContentProps
   >;
   Description: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Description>> &
-      TDialogDescriptionProps
+    React.RefAttributes<TDialogDescriptionRef> & TDialogDescriptionProps
   >;
   Footer: React.FC<TDialogFooterProps>;
   Header: React.FC<TDialogHeaderProps>;
   Overlay: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Overlay>> &
-      TDialogOverlayProps
+    React.RefAttributes<TDialogOverlayRef> & TDialogOverlayProps
   >;
   Portal: React.FC<DialogPrimitive.DialogPortalProps>;
   Root: React.FC<DialogPrimitive.DialogProps>;
   Title: React.ForwardRefExoticComponent<
-    React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Title>> &
-      TDialogTitleProps
+    React.RefAttributes<TDialogTitleRef> & TDialogTitleProps
   >;
   Trigger: React.ForwardRefExoticComponent<
-    React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> &
-      React.RefAttributes<React.ElementRef<typeof DialogPrimitive.Trigger>>
+    React.RefAttributes<TDialogTriggerRef> & TDialogTriggerProps
   >;
 };
 
@@ -67,4 +83,11 @@ export type {
   TDialogFooterProps,
   TDialogTitleProps,
   TDialogDescriptionProps,
+  TDialogTriggerProps,
+  TDialogCloseRef,
+  TDialogContentRef,
+  TDialogDescriptionRef,
+  TDialogOverlayRef,
+  TDialogTitleRef,
+  TDialogTriggerRef,
 };
