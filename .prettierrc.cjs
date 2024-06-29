@@ -15,12 +15,5 @@ module.exports = {
   proseWrap: 'preserve',
   plugins: ['prettier-plugin-tailwindcss'],
   tailwindAttributes: ['className'],
-  tailwindFunctions: [
-    'clsx',
-    'cn',
-    'classNames',
-    'classNames',
-    'tw',
-    'twMerge',
-  ],
+  tailwindFunctions: ['clsx', 'cn', 'classNames', 'cva', 'tw', 'twMerge'],
 };
