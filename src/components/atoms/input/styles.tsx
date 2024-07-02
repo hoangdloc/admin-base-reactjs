@@ -32,6 +32,7 @@ const inputAddOnVariants = cva(
 const inputWrapperVariants = cva(
   [
     'flex',
+    'items-center',
     'w-full',
     'border',
     'border-input',
@@ -61,7 +62,7 @@ const inputWrapperVariants = cva(
 );
 
 const inputIconWrapper = cva(
-  ['h-full', 'flex', 'items-center', 'justify-center', '[&>svg]:size-5'],
+  ['h-fit', 'flex', 'items-center', 'justify-center', '[&>svg]:size-5'],
   {
     variants: {
       left: {
@@ -78,6 +79,7 @@ const inputIconWrapper = cva(
 
 const inputVariants = cva([
   'flex',
+  'h-full',
   'w-full',
   'px-3',
   'py-2',
