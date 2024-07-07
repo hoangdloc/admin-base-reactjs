@@ -30,4 +30,5 @@ export * from './skeleton';
 export * from './slider';
 export * from './spin';
 export * from './switch';
+export * from './table';
 export * from './toast';
