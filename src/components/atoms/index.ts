@@ -36,3 +36,4 @@ export * from './textarea';
 export * from './toast';
 export * from './toggle';
 export * from './toggle-group';
+export * from './tooltip';
