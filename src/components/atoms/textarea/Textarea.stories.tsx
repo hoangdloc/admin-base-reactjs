@@ -13,6 +13,10 @@ type TStory = StoryObj<typeof Textarea>;
 
 export const Default: TStory = {
   args: {
-    autoGrow: true,
+    cacheMeasurements: true,
+    maxRows: 6,
+    minRows: 3,
+    onHeightChange: () => {},
+    resizeable: true,
   },
 };
