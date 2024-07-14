@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/member-ordering */
-// -----------------------------------------------------------------------------
-// Variant props
-// -----------------------------------------------------------------------------
-
 import type { textareaVariants } from './styles';
 import type { VariantProps } from 'class-variance-authority';
+import type { TextareaAutosizeProps } from 'react-textarea-autosize';
+
+//-----------------------------------------------------------------------------
+// Variant props
+// -----------------------------------------------------------------------------
 
 type TTextareaVariantProps = VariantProps<typeof textareaVariants>;
 
@@ -12,9 +12,6 @@ type TTextareaVariantProps = VariantProps<typeof textareaVariants>;
 // Component props
 // -----------------------------------------------------------------------------
 
-type TTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> &
-  TTextareaVariantProps & {
-    autoGrow?: boolean | { minHeight?: number; maxHeight?: number };
-  };
+type TTextareaProps = TextareaAutosizeProps & TTextareaVariantProps;
 
 export type { TTextareaProps };

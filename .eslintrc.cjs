@@ -206,6 +206,7 @@ module.exports = {
       1,
       {
         elements: ['img', 'object', 'area', 'input[type="image"]'],
+        img: ['Image'],
       },
     ],
     'jsx-a11y/anchor-has-content': 1,
@@ -230,7 +231,12 @@ module.exports = {
     'jsx-a11y/heading-has-content': 1,
     'jsx-a11y/html-has-lang': 1,
     'jsx-a11y/iframe-has-title': 1,
-    'jsx-a11y/img-redundant-alt': 1,
+    'jsx-a11y/img-redundant-alt': [
+      1,
+      {
+        components: [],
+      },
+    ],
     'jsx-a11y/interactive-supports-focus': 1,
     'jsx-a11y/label-has-associated-control': 1,
     'jsx-a11y/lang': 1,
