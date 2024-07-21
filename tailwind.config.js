@@ -1,4 +1,9 @@
 /* eslint-env node */
+/* eslint-disable sort-keys */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -14,6 +19,66 @@ export default {
     require('@tailwindcss/typography'),
     require('tailwindcss-animate'),
     require('tailwindcss-percentage-width'),
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.app-h1': {
+          fontSize: '1.875rem',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          '@media (min-width: 432px)': {
+            fontSize: '3.75rem',
+          },
+        },
+        '.app-h2': {
+          fontSize: '1.5rem',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          '@media (min-width: 432px)': {
+            fontSize: '2.5rem',
+          },
+        },
+        '.app-h3': {
+          fontSize: '1.125rem',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          '@media (min-width: 432px)': {
+            fontSize: '1.75rem',
+          },
+        },
+        '.app-h4': {
+          fontSize: '1rem',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          '@media (min-width: 432px)': {
+            fontSize: '1.5rem',
+          },
+        },
+        '.app-h5': {
+          fontSize: '0.875rem',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          '@media (min-width: 432px)': {
+            fontSize: '1rem',
+          },
+        },
+        '.app-text-default': {
+          fontSize: '0.875rem',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          '@media (min-width: 432px)': {
+            fontSize: '1rem',
+          },
+        },
+        '.app-text-metadata': {
+          fontSize: '0.75rem',
+          fontStyle: 'normal',
+          fontWeight: 500,
+          '@media (min-width: 432px)': {
+            fontSize: '0.875rem',
+          },
+        },
+      });
+    }),
   ],
   prefix: '',
   theme: {
@@ -82,6 +147,9 @@ export default {
           foreground: 'hsl(var(--warning-foreground))',
         },
       },
+      fontFamily: {
+        sans: [...defaultTheme.fontFamily.sans],
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -95,6 +163,9 @@ export default {
           '0%,70%,100%': { opacity: '1' },
           '20%,50%': { opacity: '0' },
         },
+      },
+      screens: {
+        xs: '432px',
       },
     },
   },
