@@ -88,6 +88,9 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply font-sans;
+  }
   body {
     @apply bg-background text-foreground;
   }

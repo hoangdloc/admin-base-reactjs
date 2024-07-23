@@ -148,7 +148,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: [...defaultTheme.fontFamily.sans],
+        sans: ["'Epilogue Variable'", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         'accordion-down': {
