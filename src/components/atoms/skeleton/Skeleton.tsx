@@ -1,4 +1,4 @@
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 const Skeleton: React.FC<React.ComponentPropsWithoutRef<'div'>> = ({
   className,

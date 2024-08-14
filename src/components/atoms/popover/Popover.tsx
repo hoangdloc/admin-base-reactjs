@@ -1,7 +1,7 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import * as React from 'react';
 
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import { popoverContentVariants } from './styles';
 

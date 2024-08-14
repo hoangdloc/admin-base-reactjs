@@ -2,7 +2,7 @@ import * as LabelPrimitive from '@radix-ui/react-label';
 
 import * as React from 'react';
 
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import { labelVariants } from './styles';
 

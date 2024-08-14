@@ -845,9 +845,9 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': [
       2,
       {
-        functions: true,
+        functions: false,
         classes: true,
-        variables: true,
+        variables: false,
         allowNamedExports: false,
         enums: true,
         typedefs: true,

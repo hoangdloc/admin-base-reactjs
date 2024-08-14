@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import { textareaVariants } from './styles';
 

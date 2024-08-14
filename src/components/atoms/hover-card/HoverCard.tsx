@@ -1,7 +1,7 @@
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 import * as React from 'react';
 
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import { hoverCardContentVariants } from './styles';
 
