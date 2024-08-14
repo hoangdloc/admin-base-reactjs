@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
-import { squashObject } from './squashObject';
+import { squashObject } from './squashObject.util';
 
 describe('squashObject', () => {
   it('should flatten a nested object', () => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
-import { cn } from './classNames';
+import { cn } from './classNames.util';
 
 describe('cn function', () => {
   it('should return empty string for no arguments', () => {

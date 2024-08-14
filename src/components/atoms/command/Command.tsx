@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable react/no-unknown-property */
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import * as React from 'react';
 
 import { Dialog } from '@/components/atoms';
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import {
   commandDialogCommandRootVariants,

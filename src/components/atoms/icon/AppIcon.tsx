@@ -1,8 +1,8 @@
 import React from 'react';
 
 import * as icons from '@/assets/icons';
+import { isDevEnv } from '@/libs/utils/checks';
 import type { TLiteralUnion } from '@/types/utilities';
-import { isDevEnv } from '@/utils/checks';
 
 export type TIconMap = keyof typeof icons;
 

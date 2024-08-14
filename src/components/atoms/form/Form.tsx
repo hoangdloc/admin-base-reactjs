@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 /* eslint-disable sort-keys */
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
@@ -14,7 +14,7 @@ import {
 } from 'react-hook-form';
 
 import { Label } from '@/components/atoms';
-import { cn } from '@/utils/helpers';
+import { cn } from '@/libs/utils/helpers';
 
 import type * as LabelPrimitive from '@radix-ui/react-label';
 
