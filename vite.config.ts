@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* eslint-disable import/no-nodejs-modules */
 
 /// <reference types="vitest" />
@@ -19,7 +18,6 @@ const PREVIEW_PORT = 8080;
 const MAX_CSS_MODULE_NAME_LENGTH = 5;
 
 // https://vitejs.dev/config/
-/** @type {import('vite').UserConfig} */
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd());
 

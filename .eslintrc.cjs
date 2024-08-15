@@ -28,7 +28,13 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['dist', 'node_modules', 'coverage', '**/.*'],
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    'coverage',
+    'vite.config.ts',
+    '**/.*',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
