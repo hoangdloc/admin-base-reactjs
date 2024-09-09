@@ -1,8 +1,8 @@
-import { useMediaQuery } from '@uidotdev/usehooks';
 import { useState } from 'react';
 
 import { Button, Drawer, Popover } from '@/components/atoms';
 import { BREAKPOINT } from '@/libs/constants';
+import { useMediaQuery } from '@/libs/hooks';
 import { EAppLanguage } from '@/types/enums';
 
 import type { TLanguageSelectProps } from './types';
