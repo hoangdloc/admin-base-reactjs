@@ -367,7 +367,7 @@ module.exports = {
       },
     ],
     'sort-keys': [
-      1,
+      0,
       'asc',
       {
         caseSensitive: true,
@@ -464,7 +464,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/member-ordering': [
-      1,
+      0,
       {
         default: {
           memberTypes: [
