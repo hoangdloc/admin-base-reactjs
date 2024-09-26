@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 type TUseBoolean = {
   toggle: () => void;
@@ -8,7 +8,7 @@ type TUseBoolean = {
 export function useBoolean(): TUseBoolean {
   const [value, setValue] = useState<boolean>(false);
   return {
-    toggle: () => setValue(!value),
+    toggle: useCallback(() => setValue((prev) => !prev), []),
     value,
   };
 }

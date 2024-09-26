@@ -2,9 +2,10 @@ import '@fontsource-variable/epilogue';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import App from '@/app';
+
 import '@/locales/i18n';
 
-import App from './App.tsx';
 import './index.css';
 
 window.addEventListener('vite:preloadError', () => {
