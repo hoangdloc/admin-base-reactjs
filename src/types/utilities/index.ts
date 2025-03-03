@@ -1,3 +1,3 @@
-export * from './DeepReadonly.type';
-export * from './ObjectKeyPaths.type';
-export * from './LiteralUnion.type';
+export * from './deep-readonly.type';
+export * from './object-key-paths.type';
+export * from './literal-union.type';
