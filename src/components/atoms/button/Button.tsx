@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys */
 import { Slot } from '@radix-ui/react-slot';
 import debounce from 'lodash/debounce';
 
@@ -51,7 +50,7 @@ export const Button = React.forwardRef<HTMLButtonElement, TButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(buttonVariants({ variant, intent, size, className }))}
+        className={cn(buttonVariants({ variant, intent, size }), className)}
         data-variant={variant}
         {...props}
         onClick={handleClick}

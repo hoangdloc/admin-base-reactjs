@@ -1,10 +1,9 @@
 import React from 'react';
 
 import * as icons from '@/assets/icons';
-import { isDevEnv } from '@/libs/utils/checks';
+import { isDevEnv, isMatchIconName } from '@/libs/utils/checks';
+import type { TIconMap } from '@/types/common';
 import type { TLiteralUnion } from '@/types/utilities';
-
-export type TIconMap = keyof typeof icons;
 
 interface IAppIconProps extends React.SVGProps<SVGSVGElement> {
   name: TLiteralUnion<TIconMap>;
@@ -14,15 +13,11 @@ interface IAppIconProps extends React.SVGProps<SVGSVGElement> {
 
 export const AppIcon: React.FC<IAppIconProps> = (props) => {
   const { name, size, width = '24', height = '24', ...rest } = props;
-  if (!Object.keys(icons).includes(name)) {
+  if (!isMatchIconName(name)) {
     return null;
   }
 
-  const MatchIcon = icons?.[name] as React.FC<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string | undefined;
-    }
-  >;
+  const MatchIcon = icons[name] as React.FC<React.SVGProps<SVGSVGElement>>;
 
   return (
     <MatchIcon
