@@ -16,7 +16,10 @@ type TUseAppTranslationResponse = Omit<
 };
 
 export const useAppTranslation = (): TUseAppTranslationResponse => {
-  const { t, ...rest } = useTranslation();
-  const typedT = (key: TKeyTranslation, options?: TOptions) => t(key, options);
-  return { t: typedT, ...rest };
+  const { t, ...rest } = useTranslation('translation');
+
+  return {
+    ...rest,
+    t: t as TUseAppTranslationResponse['t'],
+  };
 };
